@@ -4,10 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        My site
+        Trésor
     </title>
+    <style>
+        html, body {
+    height: 100%;
+    margin: 0;
+    border:0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                }
+
+        body {
+    background-image: url("background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+            }
+
+        .container{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    background-color: rgb(0, 0, 0, .35)
+            }
+    </style>
 </head>
 <body>
-    Bienvenue sur mon site web!
+    <div class="container">
+        <h1>Bienvenue sur mon site</h1>
+        <h2>Aujourd'hui nous sommes le {{date|date:"d F Y"}} </h2>
+        <h3>Il est actuellement {{ date|date:"H\hi"}}</h3>
+    </div>
+    
 </body>
 </html>
