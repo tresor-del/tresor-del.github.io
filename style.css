@@ -83,6 +83,11 @@ section h2 {
   .container {
     display: block;
   }
+.container2, container3 {
+    width: 300px;
+}
+    
+}
 
 
 
