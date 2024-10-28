@@ -87,33 +87,33 @@ section h2 {
 
 @media (max-width: 767px) {
 
-   .container {
-        display: grid;
-        place-items: center;
+  .container {
+    display: grid;
+    place-items: center;
     
-    }
-    .container2, .container3 {
-        width: 80%;
-    }
-    .section-text{
-        border: none;
-        text-align: center;
-        margin: 0;
-    }
+  }
+.container2, .container3 {
+    width: 80%;
+}
+.section-text{
+    border: none;
+    text-align: center;
+    margin: 0;
+}
 
-    .div-image{
+.div-image{
     
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .image{
-        width: 70%;
-    }
-    .contacts{
-        display: grid;
-        place-items: center;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image{
+    width: 70%;
+}
+.contacts{
+    display: grid;
+    place-items: center;
+}
 }
 
 
