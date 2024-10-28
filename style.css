@@ -79,14 +79,41 @@ section h2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.image{
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+}
+
 @media (max-width: 767px) {
+
   .container {
-    display: block;
+    display: grid;
+    place-items: center;
+    
   }
 .container2, .container3 {
-    width: 300px;
+    width: 80%;
 }
+.section-text{
+    border: none;
+    text-align: center;
+    margin: 0;
+}
+
+.div-image{
     
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image{
+    width: 70%;
+}
+.contacts{
+    display: grid;
+    place-items: center;
+}
 }
 
 
