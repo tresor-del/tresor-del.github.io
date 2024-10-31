@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adzanto Trésor</title>
     <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
 </head>
 <body>
     <div class="container">
 
         <div class="section-text" >
-            <h1><a href="index.html">Adzanto Trésor</a></h1>
-            <p>étudiant en mathématique <br> et devellopeur web</p>
+            
+            <h1><a href="index.html" class="a">Adzanto Trésor</a></h1>
+            <p>étudiant en mathématique <br> et dévelopeur web</p>
             <p>
             <div>
                 <a target="_blank" class="liens" href="https://www.facebook.com/profile.php?id=100071136857161">
@@ -39,32 +41,133 @@
                         <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
                       </svg>
                 </a>
+
+                <a href="https://wa.me/22898935845" target="_blank" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                        <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                      </svg>
+                </a>
+                <a href="mailto:tresoradzanto7@gmail.com" target='_blank' >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mailbox" viewBox="0 0 16 16">
+                        <path d="M4 4a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3m0-1h8a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4m2.646 1A4 4 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3z"/>
+                        <path d="M11.793 8.5H9v-1h5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.354-.146zM5 7c0 .552-.448 0-1 0s-1 .552-1 0a1 1 0 0 1 2 0"/>
+                      </svg>
+                </a>
             </div>
             </p>
-            <p><a href="bio.html">Bio</a>,</p>
-            <p><a href="cv.html">CV</a>,</p>
-            <p>Vous connaissez <a href="sm.html">Semence matinale?</a></p>
+            <p><a href="#" class="a" data-id="bio">Bio</a>,</p>
+            <p><a href="#" class="a" data-id="cv">CV</a>,</p>
+            <p><a href="#" data-id="blog">Blogs</a></p>
+            <p><a href="#" class="a" data-id="sm">Semence matinale</a></p>
         </div>
 
-        <div class="section-image">
+        <div class="def section-image" id="image">
             <div class="div-image">
                 <img class="image" src="img.jpg">
             </div>
             <div class="contacts">
-                <a href="https://wa.me/22898935845" target="_blank" >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-                        <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
-                      </svg> <span style="font-size: small;">Envoyer un message sur whatsapp</span>
-                </a> <br>
-                <a href="mailto:tresoradzanto7@gmail.com" target='_blank'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mailbox" viewBox="0 0 16 16">
-                        <path d="M4 4a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3m0-1h8a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4m2.646 1A4 4 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3z"/>
-                        <path d="M11.793 8.5H9v-1h5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.354-.146zM5 7c0 .552-.448 0-1 0s-1 .552-1 0a1 1 0 0 1 2 0"/>
-                      </svg> <span style="font-size: small;">Envoyer un mail</span>
-                </a>
         
             </div>
         </div>
+
+        <div class="def container3" id="sm">
+            <h1 style="background-color: brown; color: white; text-align: center;">Semence Matinale</h1>
+            <hr>
+            <p style="text-indent: 20px; font-family: 'Open Sans' !important;">
+                Les "Semences Matinales" du Berger Élisée Dossa (fondateur du <a href="#">Ministere Catholique Miséricorde</a> ) sont des messages de réflexion quotidienne ancrés dans la foi chrétienne. Chaque matin, ces capsules spirituelles offrent des passages bibliques, des conseils et des prières pour inspirer et guider les fidèles dans leur cheminement de vie.
+            </p>
+        
+            <h2>Contenu typique des vidéos</h2>
+            <p>
+                Lecture de la Bible : Chaque vidéo commence par une lecture de passages bibliques, souvent suivie d'une explication pour en souligner le sens et l'importance.
+        
+                Réflexion et méditation : Le Berger Dossa propose des réflexions sur des thèmes de la vie quotidienne à la lumière des enseignements bibliques. Ces méditations visent à renforcer la foi et à offrir des perspectives positives pour la journée à venir.
+        
+                Prière : Les vidéos incluent souvent une prière, demandant la bénédiction et la guidance de Dieu pour tous ceux qui écoutent.
+                
+                Conseils pratiques : Outre les enseignements spirituels, des conseils pratiques sur la vie, les relations et le travail sont parfois partagés pour aider les fidèles à appliquer ces principes dans leur quotidien.
+            </p>
+        
+            <h2>Impact</h2>
+        
+            <p>
+                Les "Semences Matinales" sont conçues pour être des moments de calme et de réflexion, permettant aux fidèles de commencer leur journée avec une perspective positive et ancrée dans leur foi. C'est comme une dose quotidienne de sagesse et de motivation pour affronter les défis de la vie.
+        
+                Ces vidéos ont une grande portée, touchant des personnes de divers horizons, les aidant à rester connectées à leur spiritualité et à trouver du réconfort et de l'inspiration chaque jour.
+            </p>
+            <hr>
+            Découvrez les vidéos <a href="https://youtube.com/@bergerdossa3590?si=5Pf6TKzaBJTAhQv-">ici</a>
+            
+        </div>
+
+        <div class="def container2" id="cv" >
+            <header>
+              <h1>Adzanto Trésor</h1>
+              <p>Étudiant, Développeur Web</p>
+            </header>
+            <section class="contact-info">
+              <h2>Contact</h2>
+              <p>Email : <a href="#">tresoradzanto7@gmail.com</a></p>
+              <p>Téléphone : <a href="#">+228 98935845</a></p>
+              <p>Adresse : Lomé, Togo</p>
+            </section>
+            <section class="experience">
+              <h2>Expérience</h2>
+              <div class="job">
+                <h3>Développeur Web - <a href="#">cs50W</a></h3>
+                <p>Date : Janvier 2024 - Présent</p>
+                <p>Dévéllopeur fullstack</p>
+              </div>
+            </section>
+            <section class="education">
+              <h2>Éducation</h2>
+              <p>2022: BAC 2 série D</p>
+              <p>2021: BAC 1 série C</p>
+              <p>2019: BEPC</p>
+              <p>2015: CEPD</p>
+            </section>
+            <section class="skills">
+              <h2>Compétences</h2>
+              <ul>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a>, framework <a href="#">React.Js</a></li>
+                <li><a href="#">Python</a>, framework <a href="#">django</a></li>
+                <li><a href="#">Github</a></li>
+              </ul>
+            </section>
+        </div>
+        
+        <div class="def container4" id="blog">
+          <h1>Mes blogs</h1>
+          <ul>
+            <li>blog1</li>
+            <li>blog2</li>
+            <li>blog3</li>
+          </ul>
+        </div>
+        
+        <div class="def container3" id="bio" >
+            <h1 style="background-color: brown; color: white; text-align: center;">Biographie</h1>
+            <hr>
+            <p style="text-indent: 20px; font-family: 'Open Sans' !important;">
+                Trésor Adzanto est un étudiant passionné en mathématiques à l'Université de Lomé, où il explore les profondeurs des théories mathématiques et leur application dans le monde réel. En parallèle, Trésor s'est aventuré dans le domaine du développement web, où il crée des solutions numériques innovantes et fonctionnelles. Son intérêt pour la résolution de problèmes complexes et son esprit analytique se reflètent autant dans ses études que dans ses projets web. Trésor combine la rigueur des mathématiques avec la créativité du codage pour donner vie à des projets ambitieux et percutants. Lorsqu'il n'est pas plongé dans des équations ou des lignes de code, Trésor aime lire, voyager, ou pratiquer un sport, cherchant toujours à apprendre et à grandir dans ses domaines de prédilection.
+            </p>
+        </div>   
     </div>
+    <div class="card">
+      <h1>blog</h1>
+      <main>
+        <article>
+            <h2>Premier Article de Blog</h2>
+            <p>Bienvenue sur mon blog! Ici, nous parlerons de tout ce qui concerne l'informatique...</p>
+        </article>
+        <article>
+            <h2>Deuxième Article de Blog</h2>
+            <p>Dans cet article, nous explorerons les bases de la programmation...</p>
+        </article>
+    </main>
+    </div>
+    <footer> <p>© 2024 Trésor Adzanto</p> </footer>
 </body>
 </html>

@@ -29,13 +29,14 @@ a{
 
   
 .container {
-
-    margin: 40px;
+    border: 1px solid transparent;
+    margin-top: 60px;
     display: flex;
     justify-content: center;
     max-width: auto;
     margin: 0 auto;
     padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
   
 header {
@@ -85,6 +86,21 @@ section h2 {
     border-radius: 20px;
 }
 
+footer{
+    text-align: center;
+}
+
+.card{
+    display: none;
+    text-align: center;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
 @media (max-width: 767px) {
 
   .container {
@@ -115,6 +131,21 @@ section h2 {
     place-items: center;
 }
 }
+
+.def{
+    display: none;
+}
+
+a:hover{
+    color: rgb(231, 17, 17);
+    font-weight: bold;
+}
+
+.active{
+    color: rgb(231, 17, 17);
+    font-weight: bold;
+}
+
 
 
 
