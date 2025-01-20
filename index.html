@@ -27,137 +27,304 @@
 
     <div class="container p-0 m-0" style="max-width: 100%;">
         <!-- Présentation -->
-        <div class="row" id="start">
-            <div class="col-md-12 text-center text-md-start">
-                <div class="info d-md-flex flex-column flex-md-row justify-content-center">
-                    <div class="text-center  text-md-start mb-4 mb-md-0">
-                        <div class="ms-md-4 d-md-flex">
-                            <div class="image-cropper">
-                                <img src="img.jpg" alt="Photo de Trésor Adzanto"
-    class="img-fluid rounded-circle shadow-lg m-4" style="width: 250px; height: 250px; border: 2px solid #f1f1f1; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+<div class="row home" id="start">
+    <div class="col-md-12 text-center text-md-start">
+        <div class="info d-md-flex flex-column flex-md-row justify-content-center">
+            <div class="text-center text-md-start mb-4 mb-md-0">
+                <div class="ms-md-4 d-md-flex">
+                    <!-- Avatar -->
+                    <div class="avatar-container text-center">
+                        <img src="img.jpg" alt="Adzanto Trésor" class="img-fluid rounded-circle border my-4 mx-3 shadow" style="width: 250px; height: auto;">
+                    </div>
 
-
-                            </div>
-                            <div class="text-container">
-                                <h1 id="h2" translate="no">Adzanto Trésor</h1>
-                                <p><i>Aspirant Développeur </i></p> 
-                                <div>                                                              <div class="d-flex justify-content-center justify-content-md-start gap-3 my-3">
-                                        <a target="_blank" class="liens" href="https://github.com/tresor-del/"
-                                            title="Visitez mon profil GitHub">
-                                            <i class="bi bi-github fs-4"></i>
-                                        </a>
-                                        <a target="_blank" class="liens"
-                                            href="https://www.linkedin.com/in/tr%C3%A9sor-adzanto-738147283/"
-                                            title="Visitez mon profil LinkedIn">
-                                            <i class="bi bi-linkedin fs-4"></i>
-                                        </a>
-                                        <a target="_blank" class="liens"
-                                            href="https://www.facebook.com/profile.php?id=100071136857161"
-                                            title="Visitez mon profil Facebook">
-                                            <i class="bi bi-facebook fs-4"></i>
-                                        </a>
-                                        <a target="_blank" class="liens"
-                                            href="https://www.instagram.com/motivperso.mp24/"
-                                            title="Visitez mon profil Instagram">
-                                            <i class="bi bi-instagram fs-4"></i>
-                                        </a>
-                                        <a target="_blank" class="liens" href="https://x.com/TAdzanto"
-                                            title="Visitez mon profil Twitter">
-                                            <i class="bi bi-twitter fs-4"></i>
-                                        </a>
-                                        <a href="https://wa.me/22898935845" class="liens" target="_blank"
-                                            title="Envoyez-moi un message sur WhatsApp">
-                                            <i class="bi bi-whatsapp fs-4"></i>
-                                        </a>
-                                        <a href="mailto:tresoradzanto7@gmail.com" class="liens" target="_blank"
-                                            title="Envoyez-moi un email">
-                                            <i class="bi bi-envelope fs-4"></i>
-                                        </a>
-                                    </div>
-                                    <p class="text-md-start">
-
-                                        <a class="btn btn-outline-secondary" href="#about-me" class="link">
-                                            À propos de moi
-                                        </a>
-                                        <a class="btn btn-outline-secondary"  target="_blank" class="link" href="CV.pdf">
-                                              Voir mon CV
-                                        </a>
-                                        <a class="btn btn-outline-secondary"  href="#c" class="link">
-                                            Me contacter
-                                        </a>
-                                    </p>
-
-                                </div>
-
-                            </div>
+                    <div class="text-container align-items-center">
+                        <h1 id="h2" translate="no">Adzanto Trésor</h1>
+                        <p><i>Aspirant Développeur</i></p>
+                        
+                        <!-- Social Media Links -->
+                        <div class="d-flex justify-content-center justify-content-md-start gap-3 my-3">
+                            <a target="_blank" class="liens" href="https://github.com/tresor-del/" title="Visitez mon profil GitHub">
+                                <i class="bi bi-github fs-4"></i>
+                            </a>
+                            <a target="_blank" class="liens" href="https://www.linkedin.com/in/tr%C3%A9sor-adzanto-738147283/" title="Visitez mon profil LinkedIn">
+                                <i class="bi bi-linkedin fs-4"></i>
+                            </a>
+                            <a target="_blank" class="liens" href="https://www.facebook.com/profile.php?id=100071136857161" title="Visitez mon profil Facebook">
+                                <i class="bi bi-facebook fs-4"></i>
+                            </a>
+                            <a target="_blank" class="liens" href="https://www.instagram.com/motivperso.mp24/" title="Visitez mon profil Instagram">
+                                <i class="bi bi-instagram fs-4"></i>
+                            </a>
+                            <a target="_blank" class="liens" href="https://x.com/TAdzanto" title="Visitez mon profil Twitter">
+                                <i class="bi bi-twitter fs-4"></i>
+                            </a>
+                            <a href="https://wa.me/22898935845" class="liens" target="_blank" title="Envoyez-moi un message sur WhatsApp">
+                                <i class="bi bi-whatsapp fs-4"></i>
+                            </a>
+                            <a href="mailto:tresoradzanto7@gmail.com" class="liens" target="_blank" title="Envoyez-moi un email">
+                                <i class="bi bi-envelope fs-4"></i>
+                            </a>
                         </div>
+                        
+                        <!-- Navigation Buttons -->
+                        <p class="text-md-start">
+                            <a class="btn btn-outline-primary" href="#about-me" class="link">Savoir plus sur moi</a>
+                            <a class="btn btn-outline-primary" href="#contact" class="link">Me contacter</a>
+                            <a class="btn btn-outline-primary" href="#cv" class="link">Mon CV</a>
+                        </p>
+
+                        <!-- Musique -->
+                        <div class="col-12 mt-5">
+                            <h3>Écoutez de la musique !</h3>
+                            <!-- Player Audio -->
+                            <audio controls>
+                                <source src="Lord Huron - The Night We Met (Official Audio)-KtlgYxa6BMU.mp3" type="audio/mp3">
+                                Votre navigateur ne supporte pas la balise audio.
+                            </audio>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    
+</div>
 
         <a href="#start" class="start d-none fs-1">
             <i class="bi bi-arrow-up-circle"></i>
         </a>
-        <!-- À propos de moi -->
-        <section id="about-me" class=" d-flex justify-content-center align-items-center"
-            style="min-height: 100vh; overflow: hidden;">
-            <div class="wrapper">
-                <div class="text-center">
-                    <h2 class="responsive-text">
-                        Étudiant passionné par l'informatique, j'ai récemment suivi la formation <a href="https://cs50.harvard.edu/web/2020/" target="_blank" style="text-decoration: underline; color: inherit; font-weight: bold;">CS50W de Harvard</a>, 
-                        qui m'a permis de travailler sur divers projets personnels et académiques. 
-                        Grâce à cette expérience, j'ai acquis des compétences solides en programmation et en conception d'applications web. 
-                        Je suis actuellement la formation <a href="https://cs50.harvard.edu/python/2021/" target="_blank" style="text-decoration: underline; color: inherit; font-weight: bold;">CS50P en Python</a>, 
-                        afin de renforcer mes compétences en développement Python. 
-                        Déterminé à explorer et à maîtriser divers domaines de l'informatique, je continue à développer des solutions innovantes.
-                    </h2>                    
-                  </div>
+       <!-- Section À propos -->
+<section id="about-me" class="container-fluid py-5" style="min-height: 100vh; overflow: hidden;">
+    <div class="container">
+        <!-- Introduction -->
+        <h3 class="text-center">À Propos de moi</h3>
+        <hr class="mb-5">
+        <div class="row mb-5">
+            <div class="col-lg-4 text-center text-lg-center mb-4 mb-lg-0">
+                <img src="img.jpg" alt="Photo de profil" class="img-fluid rounded shadow" style="max-width: 600px; height: 300px;">
+            </div>
+            <div class="col-lg-8">
+                <h2 class="responsive-text">
+                    Étudiant passionné par l'informatique, je travaille sur des projets innovants tout en continuant 
+                    à développer mes compétences. Mon objectif : devenir un développeur web accompli.
+                </h2>
+            </div>
+        </div>
+
+        <!-- Section CV -->
+        <section class="container py-5">
+            <h3 class="text-center mt-5">Mon CV</h3>
+            <hr class="mb-5">
+            <span id="cv"></span>
+            <!-- Navigation -->
+            <div class="d-flex justify-content-center mb-4" style="gap: 10px;">
+                <a class="btn btn-outline-secondary btns" data-id="p">Projets</a>
+                <a class="btn btn-outline-secondary btns" data-id="c">Certificats</a>
+                <a class="btn btn-outline-secondary btns" data-id="co">Compétences</a>
+            </div>
+        
+            <!-- Contenu -->
+            <div class="row justify-content-center m-3">
+                <!-- Projets -->
+                <div class="item col-lg-8 d-none" id="p">
+                    <div class="card shadow h-100 text-white">
+                        <div class="text-center">
+                            <a href="ematrix.png" target="_blank">
+                                <img src="ematrix.png" alt="Capture d'écran eMatrix" class="img-fluid rounded-top" style="max-height: 300px; max-width: 300px;">
+                            </a>
+                        </div>
+                        <div class="card-body text-center">
+                            <h4 class="card-title"><b>eMatrix</b></h4>
+                            <p class="card-text">
+                                eMatrix est une application de gestion de tâches basée sur la matrice d'Eisenhower.  
+                                Découvrez ses fonctionnalités modernes et interactives.
+                            </p>
+                            <a href="https://github.com/tresor-del/ematrix" target="_blank">Voir sur GitHub</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Certificats -->
+                <div class="item col-lg-8 d-none" id="c">
+                    <div class="card shadow h-100 text-white">
+                        <div class="text-center">
+                           <a href="CS50W.png" target="_blank" c>
+                                <img src="CS50W.png" alt="Certificat CS50W" class="img-fluid rounded-top" style="max-height: 300px; max-width: 300px;">
+                            </a> 
+                        </div>
+                        
+                        <div class="card-body text-center">
+                            <p class="card-text">
+                                J'ai terminé la formation 
+                                <a href="https://cs50.harvard.edu/web/2020/" target="_blank" class="link-bold">CS50W : Web Programming with Python and JavaScript</a>, 
+                                qui m'a permis de renforcer mes compétences en développement d'applications web.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Compétences -->
+                <div class="item col-lg-8 d-none" id="co">
+                    <div class="card shadow h-100 border-0 text-white">
+                        <div class="card-body">
+                            <h4 class="text-center mb-4">Compétences</h4>
+                            <div class="row text-center">
+                                <!-- HTML -->
+                                <div class="col-4 mb-4">
+                                    <i class="fab fa-html5 text-danger" style="font-size: 3rem;"></i>
+                                    <p class="mt-2">HTML</p>
+                                </div>
+                                <!-- CSS -->
+                                <div class="col-4 mb-4">
+                                    <i class="fab fa-css3-alt text-primary" style="font-size: 3rem;"></i>
+                                    <p class="mt-2">CSS</p>
+                                </div>
+                                <!-- JavaScript -->
+                                <div class="col-4 mb-4">
+                                    <i class="fab fa-js text-warning" style="font-size: 3rem;"></i>
+                                    <p class="mt-2">JavaScript</p>
+                                </div>
+                                <!-- Python -->
+                                <div class="col-4 mb-4">
+                                    <i class="fab fa-python text-info" style="font-size: 3rem;"></i>
+                                    <p class="mt-2">Python</p>
+                                </div>
+                                <!-- Django -->
+                                <div class="col-4 mb-4">
+                                    <i class="fas fa-database text-success" style="font-size: 3rem;"></i>
+                                    <p class="mt-2">Django</p>
+                                </div>
+                                <!-- React -->
+                                <div class="col-4 mb-4">
+                                    <i class="fab fa-react text-primary" style="font-size: 3rem;"></i>
+                                    <p class="mt-2">React</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        
+            <!-- Lien de téléchargement -->
+            <div class="d-flex justify-content-center m-3">
+                <a href="CV.pdf" target="_blank" class="btn btn-outline-secondary" >Télécharger le CV complet</a>
             </div>
         </section>
-
     </div>
+</section>
 
-    <footer class="text-center bg-dark text-white py-5" id="c">
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.btns');
+    const items = document.querySelectorAll('.item');
+
+    // Ajouter des événements sur chaque bouton
+    buttons.forEach(button => {
+        button.addEventListener('click', function () {
+            const pageId = this.dataset.id;
+
+            // Activer le bouton cliqué
+            buttons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            // Afficher le contenu correspondant
+            items.forEach(item => {
+                item.classList.add('d-none'); // Masquer toutes les sections
+            });
+
+            const activeItem = document.getElementById(pageId);
+            if (activeItem) {
+                activeItem.classList.remove('d-none'); // Afficher la section active
+            }
+        });
+    });
+
+    // Afficher une section par défaut (par exemple, les projets)
+    document.querySelector('[data-id="p"]').click();
+});
+
+</script>
+
+    <section class="text-center bg-dark text-white py-5" id="contact">
         <div class="container">
-          <h5 class="mb-4">Contactez-moi</h5>
-          <form id="contactForm" class="row g-3 justify-content-center" >
-            
-            <input type="hidden" name="to_name" id="to_name" value="Trésor" >
+            <h5 class="mb-4">Contactez-moi</h5>
+            <form id="contactForm" class="row g-3 justify-content-center">
 
-            <!-- Champ Nom -->
-            <div class="col-md-5">
-              <label for="name" class="form-label">Nom :</label>
-              <input type="text" id="name" name="name" class="form-control custom-input" placeholder="Votre nom" required>
-            </div>
-            <!-- Champ Email -->
-            <div class="col-md-5">
-              <label for="email" class="form-label">Email :</label>
-              <input type="email" id="email" name="email" class="form-control custom-input" placeholder="Votre email" required>
-            </div>
-            <!-- Champ Message -->
-            <div class="col-md-10">
-              <label for="message" class="form-label">Message :</label>
-              <textarea id="message" name="message" class="form-control custom-textarea" rows="4" placeholder="Votre message" required></textarea>
-            </div>
-            <!-- Bouton d'envoi -->
-            <div class="col-md-10 d-grid">
-              <button type="submit" id="send" class="btn btn-primary custom-btn">Envoyer</button>
-            </div>
-          </form>
+                <input type="hidden" name="to_name" id="to_name" value="Trésor">
+
+                <!-- Champ Nom -->
+                <div class="col-md-5">
+                    <label for="name" class="form-label">Nom :</label>
+                    <input type="text" id="name" name="name" class="form-control custom-input" placeholder="Votre nom"
+                        required>
+                </div>
+                <!-- Champ Email -->
+                <div class="col-md-5">
+                    <label for="email" class="form-label">Email :</label>
+                    <input type="email" id="email" name="email" class="form-control custom-input"
+                        placeholder="Votre email" required>
+                </div>
+                <!-- Champ Message -->
+                <div class="col-md-10">
+                    <label for="message" class="form-label">Message :</label>
+                    <textarea id="message" name="message" class="form-control custom-textarea" rows="4"
+                        placeholder="Votre message" required></textarea>
+                </div>
+                <!-- Bouton d'envoi -->
+                <div class="col-md-10 d-grid">
+                    <button type="submit" id="send" class="btn btn-primary custom-btn">Envoyer</button>
+                </div>
+            </form>
 
             <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+                src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
             <script type="text/javascript">
-            emailjs.init('n9294Mbgl_c25mPtv')
+                emailjs.init('n9294Mbgl_c25mPtv')
             </script>
         </div>
         <div class="mt-4">
-          <p>&copy; 2025 Trésor Adzanto. Tous droits réservés.</p>
+            <p>&copy; 2025 Trésor Adzanto. Tous droits réservés.</p>
         </div>
-      </footer>
-      
+    </section>
+
+    <style>
+        #about-me {
+    background-color: #f8f9fa;
+}
+
+h3 {
+    color: #343a40;
+    font-weight: bold;
+}
+
+img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+hr {
+    border: 1px solid #ddd;
+}
+
+    </style>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

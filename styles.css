@@ -6,7 +6,8 @@ div#start {
   background-position: bottom right;
   color: #fafafa;
   min-height: 100vh;
-  position: relative; /* Nécessaire pour que les enfants utilisent z-index */
+  position: relative;
+  /* Nécessaire pour que les enfants utilisent z-index */
   overflow: hidden;
   justify-content: center;
   align-items: center;
@@ -14,181 +15,195 @@ div#start {
 
 /* Texte superposé */
 .text-container {
-  font-family:'Poppins', sans-serif ;
-  position: relative; /* Nécessaire pour que le z-index s'applique */
-  z-index: 2; /* Texte au-dessus de l'animation */
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  /* Nécessaire pour que le z-index s'applique */
+  z-index: 2;
+  /* Texte au-dessus de l'animation */
 }
 
 
-.liens{
+.liens {
   color: gray;
 }
 
 
 /* Canvas généré par Particles.js */
 canvas {
-  position: absolute; /* Place le canvas derrière le texte */
+  position: absolute;
+  /* Place le canvas derrière le texte */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; /* Canvas en dessous du texte */
+  z-index: 1;
+  /* Canvas en dessous du texte */
 }
 
 
-    
+
 @media screen and (max-width: 768px) {
-    
-        div#start {
-        background-position-x: 75%;
-          min-height: auto; 
-          height: 100vh;
-          align-items: normal;
-        }
-      }
 
-
-a.link{
-    text-transform: uppercase;
-    text-decoration: none;
+  div#start {
+    background-position-x: 75%;
+    min-height: auto;
+    height: 100vh;
+    align-items: normal;
+  }
 }
 
-a.link:hover{
+
+a.link {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+a.link:hover {
   color: white;
 }
 
 section#about-me {
-    background:  linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
-                url("abstract-digital-grid-black-background.jpg");
-    padding-bottom: 4px;
-    background-size: cover;
-    background-position: top;
-    background-attachment: scroll;
-    color: #fafafa;
-    min-height: 100vh; 
-    overflow: hidden;
-  }
-  
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+    url("abstract-digital-grid-black-background.jpg");
+  padding-bottom: 4px;
+  background-size: cover;
+  background-position: top;
+  background-attachment: scroll;
+  color: #fafafa;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
 
 /* about section */
 .about_content {
-    padding: var(--space-xl) 0;
+  padding: var(--space-xl) 0;
+}
+
+@media (max-width: 468px) {
+  .about_content {
+    transform: skewX(0deg);
   }
-  @media (max-width: 468px) {
-    .about_content {
-      transform: skewX(0deg);
-    }
-  }
+}
 
 
-  /* create the wrappers */
+/* create the wrappers */
 .wrapper {
-    width: 100%;
-    max-width: 1240px;
-    margin: 0 auto;
-  }
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
 /* Footer Styling */
 footer {
-    font-family: 'Arial', sans-serif;
-  }
-  
-  footer h5 {
-    font-weight: bold;
-  }
-  
-  /* Input and Textarea Styling */
-  .custom-input, .custom-textarea {
-    border: 2px solid #ced4da;
-    border-radius: 10px;
-    padding: 10px;
-    transition: all 0.3s ease;
-  }
-  
-  .custom-input:focus, .custom-textarea:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  }
-  
-  /* Textarea Specific */
+  font-family: 'Arial', sans-serif;
+}
+
+footer h5 {
+  font-weight: bold;
+}
+
+/* Input and Textarea Styling */
+.custom-input,
+.custom-textarea {
+  border: 2px solid #ced4da;
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.custom-input:focus,
+.custom-textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Textarea Specific */
+.custom-textarea {
+  resize: none;
+}
+
+/* Button Styling */
+.custom-btn {
+  background-color: #007bff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+
+  .custom-input,
   .custom-textarea {
-    resize: none;
+    font-size: 0.9rem;
   }
-  
-  /* Button Styling */
-  .custom-btn {
-    background-color: #007bff;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease;
+
+  footer h5 {
+    font-size: 1.2rem;
   }
-  
-  .custom-btn:hover {
-    background-color: #0056b3;
-    color: #fff;
+
+  .btn {
+    font-size: 0.9rem;
   }
-  
-  /* Responsive Behavior */
-  @media (max-width: 768px) {
-    .custom-input, .custom-textarea {
-      font-size: 0.9rem;
-    }
-  
-    footer h5 {
-      font-size: 1.2rem;
-    }
-  
-    .btn {
-      font-size: 0.9rem;
-    }
+}
+
+.responsive-text {
+  font-weight: bold;
+  line-height: 1.2;
+  font-size: 40px;
+  padding: 10px;
+  word-spacing: 0.05em;
+  /* Ajuste légèrement l'espacement entre les mots */
+}
+
+/* Réduction de la taille pour les petits écrans */
+@media screen and (max-width: 768px) {
+  #h2 {
+    font-size: 50px;
   }
 
   .responsive-text {
-    font-weight: bold;
-    line-height: 1.2;
-    font-size: 40px;
-    padding: 10px;
-    word-spacing: 0.05em; /* Ajuste légèrement l'espacement entre les mots */
+    font-size: 35px;
+    line-height: 1.4;
+    word-spacing: 0.03em;
+    /* Réduction de l'espacement pour une meilleure lisibilité */
   }
-  
-  /* Réduction de la taille pour les petits écrans */
-  @media screen and (max-width: 768px) {
-    .responsive-text {
-      font-size: 35px;
-      line-height: 1.4;
-      word-spacing: 0.03em; /* Réduction de l'espacement pour une meilleure lisibilité */
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
+}
 
-    .responsive-text {
-      font-size: 30px;
-      line-height: 1.3;
-      word-spacing: 0.02em; /* Ajuste l'espacement sur les très petits écrans */
-    }
+@media screen and (max-width: 480px) {
+  #h2 {
+    font-size: 30px !important;
   }
-  
 
-  .img-fluid {
-    max-width: 150px;
+  .responsive-text {
+
+    font-size: 30px;
+    line-height: 1.3;
+    word-spacing: 0.02em;
+    /* Ajuste l'espacement sur les très petits écrans */
+  }
+}
+
+
+.img-fluid {
+  max-width: 150px;
 }
 
 .start {
-    position: fixed;
-    bottom: 100px;
-    right: 10px;
-    z-index: 1000;
+  position: fixed;
+  bottom: 100px;
+  right: 10px;
+  z-index: 1000;
 }
 
-@keyframes typing {
-  from {
-      width: 0; /* Commence avec une largeur de 0 */
-  }
-  to {
-      width: 100%; /* Étend à la largeur totale du texte */
-  }
-}
+
 
 #h2 {
   font-family: 'Poppins', sans-serif;
@@ -196,12 +211,43 @@ footer {
   font-weight: bolder;
   color: white;
   display: inline-block;
-  overflow:hidden; /* Cache tout texte en dehors de la largeur définie */
-  border-right: 4px solid white; /* Ajoute un curseur à droite pour simuler la saisie */
-  width: 0; /* Commence avec une largeur de 0 */
-  animation: typing 4s steps(30) 1s 1 normal both; /* Applique l'animation */
+}
+
+.link-bold {
+  text-decoration: underline;
+  color: inherit;
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
 }
 
 
+.card {
+  background-color: transparent !important; /* Supprime le fond */
+  border: none; /* Supprime les bordures */
+}
 
-  
+.card-body {
+  padding: 2rem; /* Ajoute un peu d'espace interne */
+}
+
+.text-center p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500; /* Optionnel : Rend le texte plus clair */
+}
