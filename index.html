@@ -1,332 +1,269 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trésor Adzanto</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
-        rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <title>Tresor Portfolio</title>
 </head>
 
 <body>
 
-    <!-- Bouton pour changer le mode du theme -->
+  <div class="container">
+    <header>
 
-    <!-- <button class="btn btn-dark-mode btn-outline-secondary" id="toggleButton" >
-        <i class="bi bi-moon-fill"></i>
-    </button> -->
+      <!-- Navbar -->
+<!-- Navbar Desktop -->
+<nav class="navbar-container">
+  <p class="logo">@TAdzanto</p>
+  <ul class="navbar-links-container">
+    <li><a class="navbar-link" href="#about">A propos</a></li>
+    <li><a class="navbar-link" href="#skill">Compétences</a></li>
+    <li><a class="navbar-link" href="#project">Projets</a></li>
+    <li><a class="navbar-link" href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-    <div class="container p-0 m-0" style="max-width: 100%;">
-        <!-- Présentation -->
-<div class="row home" id="start">
-    <div class="col-md-12 text-center text-md-start">
-        <div class="info d-md-flex flex-column flex-md-row justify-content-center">
-            <div class="text-center text-md-start mb-4 mb-md-0">
-                <div class="ms-md-4 d-md-flex">
-                    <!-- Avatar -->
-                    <div class="avatar-container text-center">
-                        <img src="img.jpg" alt="Adzanto Trésor" class="img-fluid rounded-circle border my-4 mx-3 shadow" style="width: 250px; height: auto;">
-                    </div>
-
-                    <div class="text-container align-items-center">
-                        <h1 id="h2" translate="no">Adzanto Trésor</h1>
-                        <p><i>Aspirant Développeur</i></p>
-                        
-                        <!-- Social Media Links -->
-                        <div class="d-flex justify-content-center justify-content-md-start gap-3 my-3">
-                            <a target="_blank" class="liens" href="https://github.com/tresor-del/" title="Visitez mon profil GitHub">
-                                <i class="bi bi-github fs-4"></i>
-                            </a>
-                            <a target="_blank" class="liens" href="https://www.linkedin.com/in/tr%C3%A9sor-adzanto-738147283/" title="Visitez mon profil LinkedIn">
-                                <i class="bi bi-linkedin fs-4"></i>
-                            </a>
-                            <a target="_blank" class="liens" href="https://www.facebook.com/profile.php?id=100071136857161" title="Visitez mon profil Facebook">
-                                <i class="bi bi-facebook fs-4"></i>
-                            </a>
-                            <a target="_blank" class="liens" href="https://www.instagram.com/motivperso.mp24/" title="Visitez mon profil Instagram">
-                                <i class="bi bi-instagram fs-4"></i>
-                            </a>
-                            <a target="_blank" class="liens" href="https://x.com/TAdzanto" title="Visitez mon profil Twitter">
-                                <i class="bi bi-twitter fs-4"></i>
-                            </a>
-                            <a href="https://wa.me/22898935845" class="liens" target="_blank" title="Envoyez-moi un message sur WhatsApp">
-                                <i class="bi bi-whatsapp fs-4"></i>
-                            </a>
-                            <a href="mailto:tresoradzanto7@gmail.com" class="liens" target="_blank" title="Envoyez-moi un email">
-                                <i class="bi bi-envelope fs-4"></i>
-                            </a>
-                        </div>
-                        
-                        <!-- Navigation Buttons -->
-                        <p class="text-md-start">
-                            <a class="btn btn-outline-primary" href="#about-me" class="link">Savoir plus sur moi</a>
-                            <a class="btn btn-outline-primary" href="#contact" class="link">Me contacter</a>
-                            <a class="btn btn-outline-primary" href="#cv" class="link">Mon CV</a>
-                        </p>
-
-                        <!-- Musique -->
-                        <div class="col-12 mt-5">
-                            <h3>Écoutez de la musique !</h3>
-                            <!-- Player Audio -->
-                            <audio controls>
-                                <source src="Lord Huron - The Night We Met (Official Audio)-KtlgYxa6BMU.mp3" type="audio/mp3">
-                                Votre navigateur ne supporte pas la balise audio.
-                            </audio>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- Navbar Mobile -->
+<nav class="navbar-container-mobile">
+  <p class="logo">@TAdzanto</p>
+  <div class="hamburger-menu">
+    <div class="hamburger-icon" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
-    
-</div>
-
-        <a href="#start" class="start d-none fs-1">
-            <i class="bi bi-arrow-up-circle"></i>
-        </a>
-       <!-- Section À propos -->
-<section id="about-me" class="container-fluid py-5" style="min-height: 100vh; overflow: hidden;">
-    <div class="container">
-        <!-- Introduction -->
-        <h3 class="text-center">À Propos de moi</h3>
-        <hr class="mb-5">
-        <div class="row mb-5">
-            <div class="col-lg-4 text-center text-lg-center mb-4 mb-lg-0">
-                <img src="img.jpg" alt="Photo de profil" class="img-fluid rounded shadow" style="max-width: 600px; height: 300px;">
-            </div>
-            <div class="col-lg-8">
-                <h2 class="responsive-text">
-                    Étudiant passionné par l'informatique, je travaille sur des projets innovants tout en continuant 
-                    à développer mes compétences. Mon objectif : devenir un développeur web accompli.
-                </h2>
-            </div>
-        </div>
-
-        <!-- Section CV -->
-        <section class="container py-5">
-            <h3 class="text-center mt-5">Mon CV</h3>
-            <hr class="mb-5">
-            <span id="cv"></span>
-            <!-- Navigation -->
-            <div class="d-flex justify-content-center mb-4" style="gap: 10px;">
-                <a class="btn btn-outline-secondary btns" data-id="p">Projets</a>
-                <a class="btn btn-outline-secondary btns" data-id="c">Certificats</a>
-                <a class="btn btn-outline-secondary btns" data-id="co">Compétences</a>
-            </div>
-        
-            <!-- Contenu -->
-            <div class="row justify-content-center m-3">
-                <!-- Projets -->
-                <div class="item col-lg-8 d-none" id="p">
-                    <div class="card shadow h-100 text-white">
-                        <div class="text-center">
-                            <a href="ematrix.png" target="_blank">
-                                <img src="ematrix.png" alt="Capture d'écran eMatrix" class="img-fluid rounded-top" style="max-height: 300px; max-width: 300px;">
-                            </a>
-                        </div>
-                        <div class="card-body text-center">
-                            <h4 class="card-title"><b>eMatrix</b></h4>
-                            <p class="card-text">
-                                eMatrix est une application de gestion de tâches basée sur la matrice d'Eisenhower.  
-                                Découvrez ses fonctionnalités modernes et interactives.
-                            </p>
-                            <a href="https://github.com/tresor-del/ematrix" target="_blank">Voir sur GitHub</a>
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- Certificats -->
-                <div class="item col-lg-8 d-none" id="c">
-                    <div class="card shadow h-100 text-white">
-                        <div class="text-center">
-                           <a href="CS50W.png" target="_blank" c>
-                                <img src="CS50W.png" alt="Certificat CS50W" class="img-fluid rounded-top" style="max-height: 300px; max-width: 300px;">
-                            </a> 
-                        </div>
-                        
-                        <div class="card-body text-center">
-                            <p class="card-text">
-                                J'ai terminé la formation 
-                                <a href="https://cs50.harvard.edu/web/2020/" target="_blank" class="link-bold">CS50W : Web Programming with Python and JavaScript</a>, 
-                                qui m'a permis de renforcer mes compétences en développement d'applications web.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- Compétences -->
-                <div class="item col-lg-8 d-none" id="co">
-                    <div class="card shadow h-100 border-0 text-white">
-                        <div class="card-body">
-                            <h4 class="text-center mb-4">Compétences</h4>
-                            <div class="row text-center">
-                                <!-- HTML -->
-                                <div class="col-4 mb-4">
-                                    <i class="fab fa-html5 text-danger" style="font-size: 3rem;"></i>
-                                    <p class="mt-2">HTML</p>
-                                </div>
-                                <!-- CSS -->
-                                <div class="col-4 mb-4">
-                                    <i class="fab fa-css3-alt text-primary" style="font-size: 3rem;"></i>
-                                    <p class="mt-2">CSS</p>
-                                </div>
-                                <!-- JavaScript -->
-                                <div class="col-4 mb-4">
-                                    <i class="fab fa-js text-warning" style="font-size: 3rem;"></i>
-                                    <p class="mt-2">JavaScript</p>
-                                </div>
-                                <!-- Python -->
-                                <div class="col-4 mb-4">
-                                    <i class="fab fa-python text-info" style="font-size: 3rem;"></i>
-                                    <p class="mt-2">Python</p>
-                                </div>
-                                <!-- Django -->
-                                <div class="col-4 mb-4">
-                                    <i class="fas fa-database text-success" style="font-size: 3rem;"></i>
-                                    <p class="mt-2">Django</p>
-                                </div>
-                                <!-- React -->
-                                <div class="col-4 mb-4">
-                                    <i class="fab fa-react text-primary" style="font-size: 3rem;"></i>
-                                    <p class="mt-2">React</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        
-            <!-- Lien de téléchargement -->
-            <div class="d-flex justify-content-center m-3">
-                <a href="CV.pdf" target="_blank" class="btn btn-outline-secondary" >Télécharger le CV complet</a>
-            </div>
-        </section>
-    </div>
-</section>
+    <ul class="navbar-links-container">
+      <li><a class="navbar-link" href="#about" onclick="toggleMenu()">A propos</a></li>
+      <li><a class="navbar-link" href="#skill" onclick="toggleMenu()">Compétences</a></li>
+      <li><a class="navbar-link" href="#project" onclick="toggleMenu()">Projets</a></li>
+      <li><a class="navbar-link" href="#contact" onclick="toggleMenu()">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const buttons = document.querySelectorAll('.btns');
-    const items = document.querySelectorAll('.item');
 
-    // Ajouter des événements sur chaque bouton
-    buttons.forEach(button => {
-        button.addEventListener('click', function () {
-            const pageId = this.dataset.id;
+function toggleMenu() {
+  const menu = document.querySelector('.navbar-container-mobile .navbar-links-container');
+  const hamburger = document.querySelector('.hamburger-icon');
+  menu.classList.toggle('show');
+  hamburger.classList.toggle('active');
+  if (menu.classList.contains('show')) {
+    menu.style.display = 'block';
+  } else {
+    menu.style.display = 'none';
+  }
+}
 
-            // Activer le bouton cliqué
-            buttons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-
-            // Afficher le contenu correspondant
-            items.forEach(item => {
-                item.classList.add('d-none'); // Masquer toutes les sections
-            });
-
-            const activeItem = document.getElementById(pageId);
-            if (activeItem) {
-                activeItem.classList.remove('d-none'); // Afficher la section active
-            }
-        });
-    });
-
-    // Afficher une section par défaut (par exemple, les projets)
-    document.querySelector('[data-id="p"]').click();
-});
 
 </script>
 
-    <section class="text-center bg-dark text-white py-5" id="contact">
-        <div class="container">
-            <h5 class="mb-4">Contactez-moi</h5>
-            <form id="contactForm" class="row g-3 justify-content-center">
-
-                <input type="hidden" name="to_name" id="to_name" value="Trésor">
-
-                <!-- Champ Nom -->
-                <div class="col-md-5">
-                    <label for="name" class="form-label">Nom :</label>
-                    <input type="text" id="name" name="name" class="form-control custom-input" placeholder="Votre nom"
-                        required>
-                </div>
-                <!-- Champ Email -->
-                <div class="col-md-5">
-                    <label for="email" class="form-label">Email :</label>
-                    <input type="email" id="email" name="email" class="form-control custom-input"
-                        placeholder="Votre email" required>
-                </div>
-                <!-- Champ Message -->
-                <div class="col-md-10">
-                    <label for="message" class="form-label">Message :</label>
-                    <textarea id="message" name="message" class="form-control custom-textarea" rows="4"
-                        placeholder="Votre message" required></textarea>
-                </div>
-                <!-- Bouton d'envoi -->
-                <div class="col-md-10 d-grid">
-                    <button type="submit" id="send" class="btn btn-primary custom-btn">Envoyer</button>
-                </div>
-            </form>
-
-            <script type="text/javascript"
-                src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-            <script type="text/javascript">
-                emailjs.init('n9294Mbgl_c25mPtv')
-            </script>
+      <!-- Hero -->
+      <section class="hero">
+        <img class="hero-image" src="./assets/img.png" alt="Image de Trésor">
+        <div class="hero-content">
+          <div class="hero-info">
+            <h1>Trésor Adzanto</h1>
+            <p class="small-text">Aspirant Développeur</p>
+          </div>
+          <ul class="hero-btns">
+            <li><a target="_blank" class="btn btn-outline" href="./assets/CV.pdf">Telecharger cv</a></li>
+            <li><a class="btn btn-grey" href="#contact">Me contacter</a></li>
+          </ul>
+          <div class="hero-links">
+            <!-- Liens vers les profils de réseaux sociaux -->
+            <a target="_blank" class="hero-link" href="https://github.com/tresor-del/" title="Visitez mon profil GitHub">
+              <i class="bi bi-github fs-4"></i>
+            </a>
+            <a target="_blank" class="hero-link" href="https://www.linkedin.com/in/tr%C3%A9sor-adzanto-738147283/"
+              title="Visitez mon profil LinkedIn">
+              <i class="bi bi-linkedin fs-4"></i>
+            </a>
+            <a target="_blank" class="hero-link" href="https://www.facebook.com/profile.php?id=100071136857161"
+              title="Visitez mon profil Facebook">
+              <i class="bi bi-facebook fs-4"></i>
+            </a>
+            <a target="_blank" class="hero-link" href="https://www.instagram.com/motivperso.mp24/"
+              title="Visitez mon profil Instagram">
+              <i class="bi bi-instagram fs-4"></i>
+            </a>
+            <a target="_blank" class="hero-link" href="https://x.com/TAdzanto" title="Visitez mon profil Twitter">
+              <i class="bi bi-twitter fs-4"></i>
+            </a>
+            <a href="https://wa.me/22898935845" class="hero-link" target="_blank"
+              title="Envoyez-moi un message sur WhatsApp">
+              <i class="bi bi-whatsapp fs-4"></i>
+            </a>
+            <a href="mailto:tresoradzanto7@gmail.com" class="hero-link" target="_blank" title="Envoyez-moi un email">
+              <i class="bi bi-envelope fs-4"></i>
+            </a>
+          </div>
         </div>
-        <div class="mt-4">
-            <p>&copy; 2025 Trésor Adzanto. Tous droits réservés.</p>
+      </section>
+    </header>
+
+    <main> 
+
+      <!-- Section A propos -->
+      <section id="about" class="about">
+        <div class="about-title">
+          <p class="small-text">Apprenez a me connaitre</p>
+          <h2>A propos de moi</h2>
         </div>
-    </section>
+        <div class="about-content">
+          <img src="./assets/abi.jpg" alt="Avatar" class="avatar">
+          <div class="text">
+            <div class="skill">
+              <div>
+                <img src="./assets/CS50W.png" alt="">
+                <h3 class="skill-title">Certificat</h3>
+                <p class="skill-text" >CS50W<br> Développement Web avec Python et JavaScript</p>
+                <a href="./assets/CS50W.png">voir</a>
+              </div>
+            </div>
+            <div>
+              <p class="t">Je suis Trésor Adzanto, un développeur passionné avec une forte expertise en développement web. Avec une formation rigoureuse en informatique, je possède une solide compréhension des technologies frontend et backend. Mon objectif est de créer des solutions innovantes et efficaces qui répondent aux besoins des utilisateurs tout en respectant les meilleures pratiques de l'industrie. Je suis constamment à la recherche de nouvelles opportunités pour apprendre et évoluer dans ce domaine dynamique.</p>
+            </div>
+          </div>
+        </div>            
+        </div>
+      </section>
 
-    <style>
-        #about-me {
-    background-color: #f8f9fa;
-}
+      <!-- Section Compétences -->
+      <section id="skill" class="skills">
 
-h3 {
-    color: #343a40;
-    font-weight: bold;
-}
+        <div class="skills-title">
+          <p class="small-text">Explorer Mes</p>
+          <h2>Compétences</h2>
+        </div>
+            <div class="skills-container">
+            <div class="skill-detail">
+              <h3 class="title">Frontend Development</h3>
+              <div class="article-container">
+              <article>
+              <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML icon" class="icon">
+              <div>
+              <h4>HTML</h4>
+              <p>Intermédiaire</p>
+              </div>
+              </article>
+              <article>
+              <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS icon" class="icon">
+              <div>
+              <h4>CSS</h4>
+              <p>Intermédiaire</p>
+              </div>
+              </article>
+              <article>
+              <img src="https://img.icons8.com/color/48/000000/sass.png" alt="SASS icon" class="icon">
+              <div>
+              <h4>SASS</h4>
+              <p>Basique</p>
+              </div>
+              </article>
+              <article>
+              <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript icon" class="icon">
+              <div>
+              <h4>JavaScript</h4>
+              <p>Intermédiaire</p>
+              </div>
+              </article>
+              <article>
+              <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React icon" class="icon">
+              <div>
+              <h4>React</h4>
+              <p>Basique</p>
+              </div>
+              </article>
+              </div>
+            </div>
+            <div class="skill-detail">
+              <h3 class="title">Backend Development</h3>
+              <div class="article-container">
+              <article>
+              <img src="https://img.icons8.com/color/48/000000/postgreesql.png" alt="PostgreSQL icon" class="icon">
+              <div>
+              <h4>PostgreSQL</h4>
+              <p>Basique</p>
+              </div>
+              </article>
+              <article>
+              <img src="https://img.icons8.com/color/48/000000/api.png" alt="Rest Framework icon" class="icon">
+              <div>
+              <h4>Rest Framework</h4>
+              <p>Basique</p>
+              </div>
+              </article>
+              <article>
+              <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django icon" class="icon">
+              <div>
+              <h4>Django</h4>
+              <p>Intermediate</p>
+              </div>
+              </article>
+              <article>
+              <img src="https://img.icons8.com/color/48/000000/git.png" alt="Git icon" class="icon">
+              <div>
+              <h4>Git</h4>
+              <p>Intermediate</p>
+              </div>
+              </article>
+              </div>
+            </div>
+            </div>
+      </section>
 
-img {
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+      <!-- Section Projets -->
+      <section id="project" class="about">
+        <div class="about-title">
+          <p class=" small-text">Parcourir Mes Récentes</p>
+          <h2 class="title">Projets</h2>
+        </div>
+        <div class="project-content">
+          <img class="project-img" src="https://assets.asana.biz/transform/eecc590b-169f-4645-a36f-d366d7cac99d/article-leadership-eisenhower-matrix-2x?io=transform:fill,width:1120&format=webp" alt="Project 1" class="project-img" />
+              <div>
+                <h3 class="">eMatrix</h3>
+                <ul class="hero-btns">
+                  <li><a class="btn btn-outline" href="https://github.com/tresor-del/ematrix">GitHub</a></li>
+                  <li><a href="#" class="btn btn-grey">Live Démo</a></li>
+                </ul>
+              </div>
+                
+        </div>
+                
+        </div>
+      </section>
 
-.btn-primary {
-    background-color: #007bff;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-}
+      <!-- Section contact -->
+      <section id="contact" class="about">
+        <div class="about-title">
+          <p class="small-text">Entrer en Contact</p>
+        <h2 class="title">Me Contacter</h2>
+        </div>
+        
+        <div class="project-content">
+            <div class="contact-info-container">
+            <img src="https://img.icons8.com/ios-filled/50/000000/email.png" alt="Email Icon" class="contact-icon" style="width: 4rem;">
+            <p><a class="btn btn-outline" href="mailto:tresoradzanto7@gmail.com" style="font-size: 1.5rem;">tresoradzanto7@gmail.com</a></p>
+            </div>
+        </div>
+      </section>
 
-.btn-primary:hover {
-    background-color: #0056b3;
-}
+    </main>
 
-hr {
-    border: 1px solid #ddd;
-}
+    <footer style="text-align: center;">
+      <p class="small-text">Copyright &#169; 2025 Trésor Adzanto. All Rights Reserved.</p>
+    </footer>
+  </div>
 
-    </style>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
