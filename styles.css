@@ -9,14 +9,14 @@
   --black: #000000;
 
   /* FONT SIZE */
-  --text-sm: 1.2rem;
-  --text-base: 1.6rem;
-  --text-paragraph: 2rem;
-  --text-h5: 2.4rem;
-  --text-h4: 3.2rem;
-  --text-h3: 4rem;
-  --text-h2: 4.8rem;
-  --text-h1: 6.2rem;
+  --text-sm: clamp(1rem, 1vw + 0.5rem, 1.2rem);
+  --text-base: clamp(1.2rem, 1vw + 0.6rem, 1.6rem);
+  --text-paragraph: clamp(1.6rem, 2vw + 0.5rem, 2rem);
+  --text-h5: clamp(2rem, 2vw + 0.4rem, 2.4rem);
+  --text-h4: clamp(2.4rem, 2vw + 0.8rem, 3.2rem);
+  --text-h3: clamp(3rem, 3vw + 1rem, 4rem);
+  --text-h2: clamp(3.6rem, 3vw + 1.2rem, 4.8rem);
+  --text-h1: clamp(4rem, 4vw + 1rem, 6.2rem);
 
   /* FONT WEIGHT */
   --font-weight-normal: 400;
@@ -243,7 +243,7 @@ a,
 /*------ HEADER-HERO ------*/
 
 .hero{
-  height: calc(100vh - var(--nav-height));
+  height: calc(100dvh - var(--nav-height));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -252,8 +252,10 @@ a,
 }
 
 .hero-image{
-  max-width: 400px;
+  max-width: 350px;
   width: 100%;
+  height: auto;
+  display: block;
 }
 
 .hero-content{
@@ -261,6 +263,13 @@ a,
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.hero-title{
+  width: 100%;
+  white-space: nowrap;
+  font-size: var(--text-h1);
+  letter-spacing: var(--line-height-normal);
 }
 
 .hero-btns{
@@ -287,10 +296,12 @@ a,
   display: flex;
   flex-direction: column;
   margin-bottom: 20rem;
+  gap: 5rem;
 }
 
 .about-title{
   text-align: center;
+  justify-content: center;
   margin-bottom: 3rem;
   font-weight: var(--font-weight-normal);
   letter-spacing: var(--line-height-normal);
@@ -353,6 +364,7 @@ a,
   flex-direction: column;
   align-items: center;
   margin-bottom: 20rem;
+  gap: 5rem;
 }
 
 .skills-title{
@@ -436,8 +448,8 @@ a,
 }
 .project-content img{
   max-width: 300px;
-  border-radius: 20px;
 }
+
 
 
 @media screen and (max-width: 900px) {
@@ -458,10 +470,6 @@ a,
     font-size: var(--text-paragraph);
   }
 
-  .hero{
-    height: calc(80vh - var(--nav-height));
-  }
-
   .hero-image{
     max-width: 200px;
   }
@@ -471,9 +479,6 @@ a,
     height: auto;
   }
 
-  .article-container {
-    grid-template-columns: 1fr;
-  }
 
   .skill-title{
     font-size: var(--text-h4);
