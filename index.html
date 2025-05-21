@@ -17,114 +17,189 @@
 <body>
 
   <div class="container">
+
+    <div class="fab-container">
+      <img class="fab" src="https://img.icons8.com/?size=50&id=QwXNdsIxTEqF&format=png" alt="Menu">
+
+      <div class="fab-menu">
+        <a href="#" id="light-mode-btn"><i class="fas fa-sun"></i> Clair</a>
+        <a href="#" id="dark-mode-btn"><i class="fas fa-moon"></i> Sombre</a>
+        <a href="#"><i class="fas fa-share-alt"></i> Partager</a>
+      </div>
+    </div>
+
+    <script>
+      // Gestion améliorée du thème
+      function setTheme(theme) {
+        document.documentElement.classList.remove('light', 'dark');
+        document.documentElement.classList.add(theme);
+        localStorage.setItem('theme', theme);
+        
+        // Force le recalcul des variables CSS
+        document.documentElement.style.setProperty('color-scheme', theme);
+      }
+
+      // Initialisation
+      function initTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme) {
+          setTheme(savedTheme);
+        } else {
+          setTheme(systemDark ? 'dark' : 'light');
+        }
+      }
+
+      // Écouteur pour les changements système
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (!localStorage.getItem('theme')) {
+          setTheme(e.matches ? 'dark' : 'light');
+        }
+      });
+
+      // Boutons
+      document.getElementById('light-mode-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        setTheme('light');
+      });
+
+      document.getElementById('dark-mode-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        setTheme('dark');
+      });
+
+      // Initialiser au chargement
+      document.addEventListener('DOMContentLoaded', initTheme);
+    </script>
+    <script>
+      document.querySelector('.fab').addEventListener('click', function(event) {
+        event.stopPropagation();
+        const menu = document.querySelector('.fab-menu');
+        menu.classList.toggle('show');
+      });
+
+      window.addEventListener('click', function() {
+        const menu = document.querySelector('.fab-menu');
+        menu.classList.remove('show');
+      });
+
+      document.querySelector('.fab-menu').addEventListener('click', function(event) {
+        event.stopPropagation();
+      });
+    </script>
+  
     <header>
 
       <!-- Navbar -->
-<!-- Navbar Desktop -->
-<nav class="navbar-container">
-  <p class="logo">@TAdzanto</p>
-  <ul class="navbar-links-container">
-    <li><a class="navbar-link" href="#about">
-      <div class="wrapper">
-        A propos
-        <div class="line"></div>
-      </div>
-    </a></li>
-    <li><a class="navbar-link" href="#skill">
-       <div class="wrapper">
-        Compétences
-        <div class="line"></div>
-      </div>
-    </a></li>
-    <li><a class="navbar-link" href="#project">
-       <div class="wrapper">
-        Projets
-        <div class="line"></div>
-      </div>
-    </a></li>
-    <li><a class="navbar-link" href="#contact">
-       <div class="wrapper">
-        contact
-        <div class="line"></div>
-      </div>
-    </a></li>
-  </ul>
-</nav>
-
-<!-- Navbar Mobile -->
-<nav class="navbar-container-mobile">
-  <p class="logo">@TAdzanto</p>
-  <div class="hamburger-menu">
-    <div class="hamburger-icon" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <ul class="navbar-links-container">
-      <li><a class="navbar-link" href="#about" onclick="toggleMenu()">A propos</a></li>
-      <li><a class="navbar-link" href="#skill" onclick="toggleMenu()">Compétences</a></li>
-      <li><a class="navbar-link" href="#project" onclick="toggleMenu()">Projets</a></li>
-      <li><a class="navbar-link" href="#contact" onclick="toggleMenu()">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<script>
-
-function toggleMenu() {
-  const menu = document.querySelector('.navbar-container-mobile .navbar-links-container');
-  const hamburger = document.querySelector('.hamburger-icon');
-  menu.classList.toggle('show');
-  hamburger.classList.toggle('active');
-  if (menu.classList.contains('show')) {
-    menu.style.display = 'block';
-  } else {
-    menu.style.display = 'none';
-  }
-}
-
-
-</script>
-
-      <!-- Hero -->
-      <section class="hero">
-        <div class="hero-img">
-          <img src="./assets/1744215943563.jpeg" alt="Image de Trésor">
-        </div>
-        
-        
-        <div class="hero-content">
-          <div class="hero-info">
-            <h1 class="hero-title" translate="no">Trésor Adzanto</h1>
-            <p class="small-text">Étudiant Ingénieur Informatique</p>
-          </div>
-          <ul class="hero-btns">
-            <li><a target="_blank" class="btn btn-outline" href="./assets/CV.pdf">Voir mon cv</a></li>
-            <li><a class="btn btn-grey" href="#contact">Me contacter</a></li>
+        <!-- Navbar Desktop -->
+        <nav class="navbar-container">
+          <p class="logo">@TAdzanto</p>
+          <ul class="navbar-links-container">
+            <li><a class="navbar-link" href="#about">
+              <div class="wrapper">
+                A propos
+                <div class="line"></div>
+              </div>
+            </a></li>
+            <li><a class="navbar-link" href="#skill">
+              <div class="wrapper">
+                Compétences
+                <div class="line"></div>
+              </div>
+            </a></li>
+            <li><a class="navbar-link" href="#project">
+              <div class="wrapper">
+                Projets
+                <div class="line"></div>
+              </div>
+            </a></li>
+            <li><a class="navbar-link" href="#contact">
+              <div class="wrapper">
+                contact
+                <div class="line"></div>
+              </div>
+            </a></li>
           </ul>
-          <div class="hero-links">
-            <!-- Liens vers les profils de réseaux sociaux -->
-            <a target="_blank" class="hero-link" href="https://github.com/tresor-del/" title="Visitez mon profil GitHub">
-              <i class="bi bi-github fs-5"></i>
-            </a>
-            <a target="_blank" class="hero-link" href="https://www.linkedin.com/in/tr%C3%A9sor-adzanto-738147283/"
-              title="Visitez mon profil LinkedIn">
-              <i class="bi bi-linkedin fs-5"></i>
-            </a>
-            <a target="_blank" class="hero-link" href="https://www.facebook.com/profile.php?id=100071136857161"
-              title="Visitez mon profil Facebook">
-              <i class="bi bi-facebook fs-5"></i>
-            </a>
-            <a target="_blank" class="hero-link" href="https://www.instagram.com/motivperso.mp24/"
-              title="Visitez mon profil Instagram">
-              <i class="bi bi-instagram fs-5"></i>
-            </a>
-            <a target="_blank" class="hero-link" href="https://x.com/TAdzanto" title="Visitez mon profil Twitter">
-              <i class="bi bi-twitter fs-5"></i>
-            </a>
+        </nav>
+
+        <!-- Navbar Mobile -->
+        <nav class="navbar-container-mobile">
+          <p class="logo">@TAdzanto</p>
+          <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+              <div class="navbar-links-container-mobile">
+                <div>
+                  <a class="navbar-link-mobile" href="#project" onclick="toggleMenu()">Projets</a>
+                  <a class="navbar-link-mobile" href="#contact" onclick="toggleMenu()">Contact</a>
+                  <a class="navbar-link-mobile" href="#about" onclick="toggleMenu()">A propos</a>
+                  <a class="navbar-link-mobile" href="#skill" onclick="toggleMenu()">Compétences</a>
+                </div>
+                
+              </div>
           </div>
-        </div>
-      </section>
+        </nav>
+
+        <script>
+
+        function toggleMenu() {
+          const menu = document.querySelector('.navbar-container-mobile .navbar-links-container-mobile');
+          const hamburger = document.querySelector('.hamburger-icon');
+          menu.classList.toggle('show');
+          hamburger.classList.toggle('active');
+          if (menu.classList.contains('show')) {
+            menu.style.display = 'block';
+          } else {
+            menu.style.display = 'none';
+          }
+        }
+
+
+        </script>
+
+        <!-- Hero -->
+        <section class="hero">
+          <div class="hero-img">
+            <img src="./assets/1744215943563.jpeg" alt="Image de Trésor">
+          </div>
+          
+          
+          <div class="hero-content">
+            <div class="hero-info">
+              <h1 class="hero-title" translate="no">Trésor Adzanto</h1>
+              <p class="small-text">Étudiant Ingénieur Informatique</p>
+            </div>
+            <ul class="hero-btns">
+              <li><a target="_blank" class="btn btn-outline" href="./assets/CV.pdf">Voir mon cv</a></li>
+              <li><a href="#contact" class="btn btn-grey">Me contacter</a></li>
+            </ul>
+            <div class="hero-links">
+              <!-- Liens vers les profils de réseaux sociaux -->
+              <a target="_blank" class="hero-link" href="https://github.com/tresor-del/" title="Visitez mon profil GitHub">
+                <i class="bi bi-github fs-5"></i>
+              </a>
+              <a target="_blank" class="hero-link" href="https://www.linkedin.com/in/tr%C3%A9sor-adzanto-738147283/"
+                title="Visitez mon profil LinkedIn">
+                <i class="bi bi-linkedin fs-5"></i>
+              </a>
+              <a target="_blank" class="hero-link" href="https://www.facebook.com/profile.php?id=100071136857161"
+                title="Visitez mon profil Facebook">
+                <i class="bi bi-facebook fs-5"></i>
+              </a>
+              <a target="_blank" class="hero-link" href="https://www.instagram.com/motivperso.mp24/"
+                title="Visitez mon profil Instagram">
+                <i class="bi bi-instagram fs-5"></i>
+              </a>
+              <a target="_blank" class="hero-link" href="https://x.com/TAdzanto" title="Visitez mon profil Twitter">
+                <i class="bi bi-twitter fs-5"></i>
+              </a>
+            </div>
+          </div>
+        </section>
     </header>
 
     <main> 
@@ -132,22 +207,25 @@ function toggleMenu() {
       <!-- Section A propos -->
       <section id="about" class="about">
         <div class="about-title">
-          <p class="small-text">Apprenez a me connaitre</p>
+          <!-- <p class="small-text">Apprenez a me connaitre</p> -->
           <h2>A propos de moi</h2>
         </div>
         <div class="about-content">
-          <img src="./assets/abi.jpg" alt="Avatar" class="avatar">
+          <img src="https://img.icons8.com/?size=400&id=27irm8EoQrle&format=png" alt="Avatar" class="avatar" >
           <div class="text">
             <div class="skill">
-              <div>
+              <!-- <div>
                 <img src="https://certificates.cs50.io/ebb304ca-512d-464c-83b6-ac9a1f739d6a.png" alt=" CS50W certificat" *>
                 <h3 class="skill-title">Certificat</h3>
                 <p class="skill-text" >CS50W<br> Développement Web avec Python et JavaScript</p>
                 <a href="https://certificates.cs50.io/ebb304ca-512d-464c-83b6-ac9a1f739d6a.pdf?size=letter">voir</a>
-              </div>
+              </div> -->
             </div>
             <div>
-              <p class="t">Je suis Trésor Adzanto, un développeur passionné avec une forte expertise en développement web. Avec une formation rigoureuse en informatique, je possède une solide compréhension des technologies frontend et backend. Mon objectif est de créer des solutions innovantes et efficaces qui répondent aux besoins des utilisateurs tout en respectant les meilleures pratiques de l'industrie. Je suis constamment à la recherche de nouvelles opportunités pour apprendre et évoluer dans ce domaine dynamique.</p>
+<p class="t">
+  Je m'appelle <strong>Trésor Adzanto</strong>, étudiant ingénieur en informatique, passionné par les technologies du web. Grâce à une formation rigoureuse, j’ai acquis une solide maîtrise des outils frontend et backend. Mon objectif en tant que futur ingénieur est de concevoir des solutions <strong>innovantes, efficaces</strong> et alignées sur les besoins concrets du monde réel, tout en respectant les meilleures pratiques de l’industrie. Curieux et motivé, je suis toujours en quête de nouvelles opportunités pour <strong>apprendre, évoluer</strong> et contribuer dans ce domaine passionnant.
+</p>
+           
             </div>
           </div>
         </div>            
@@ -156,136 +234,290 @@ function toggleMenu() {
 
       <!-- Section Compétences -->
       <section id="skill" class="skills">
-
         <div class="skills-title">
-          <p class="small-text">Explorer Mes</p>
+          <!-- <p class="small-text">Explorer mes</p> -->
           <h2>Compétences</h2>
         </div>
-            <div class="skills-container">
-            <div class="skill-detail">
-              <h3 class="title">Déveoppement Frontend</h3>
-              <div class="article-container">
+        <div class="comp-section">
+          <img src="assets/add.png" alt="" width="20" height="20">
+          <p style="text-align: left;">Développement Web</p>
+        </div>
+        <div class="skills-container">
+          <div class="skill-detail">
+            <h3 class="title">Frontend</h3>
+            <div class="article-container">
               <article>
-              <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML icon" class="icon">
-              <div>
-              <h4>HTML</h4>
-              <p>Intermédiaire</p>
-              </div>
+                <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML icon" class="icon">
+                <div>
+                  <h4>HTML</h4>
+                  <p>
+                    <span title="Intermédiaire">★★★&#9733;☆</span>
+                  </p>
+                </div>
               </article>
               <article>
-              <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS icon" class="icon">
-              <div>
-              <h4>CSS</h4>
-              <p>Intermédiaire</p>
-              </div>
+                <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS icon" class="icon">
+                <div>
+                  <h4>CSS</h4>
+                  <p>
+                    <span title="Intermédiaire">★★★&#9733;☆</span>
+                  </p>
+                </div>
               </article>
               <article>
-              <img src="https://img.icons8.com/color/48/000000/sass.png" alt="SASS icon" class="icon">
-              <div>
-              <h4>SASS</h4>
-              <p>Basique</p>
-              </div>
+                <img src="https://img.icons8.com/color/48/000000/sass.png" alt="SASS icon" class="icon">
+                <div>
+                  <h4>SASS</h4>
+                  <p>
+                    <span title="Basique">★★☆☆☆</span>
+                  </p>
+                </div>
               </article>
               <article>
-              <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript icon" class="icon">
-              <div>
-              <h4>JavaScript</h4>
-              <p>Intermédiaire</p>
-              </div>
+                <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript icon" class="icon">
+                <div>
+                  <h4>JavaScript</h4>
+                  <p>
+                    <span title="Intermédiaire">★★★☆☆</span>
+                  </p>
+                </div>
               </article>
               <article>
-              <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React icon" class="icon">
-              <div>
-              <h4>React</h4>
-              <p>Basique</p>
-              </div>
+                <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React icon" class="icon">
+                <div>
+                  <h4>React</h4>
+                  <p>
+                    <span title="Basique">★★☆☆☆</span>
+                  </p>
+                </div>
               </article>
-              </div>
             </div>
-            <div class="skill-detail">
-              <h3 class="title">Développement Backend</h3>
-              <div class="article-container">
+          </div>
+          <div class="skill-detail">
+            <h3 class="title">Backend</h3>
+            <div class="article-container">
               <article>
-              <img src="https://img.icons8.com/color/48/000000/postgreesql.png" alt="PostgreSQL icon" class="icon">
-              <div>
-              <h4>PostgreSQL</h4>
-              <p>Basique</p>
-              </div>
+                <img src="https://img.icons8.com/color/48/000000/postgreesql.png" alt="PostgreSQL icon" class="icon">
+                <div>
+                  <h4>PostgreSQL</h4>
+                  <p>
+                    <span title="Basique">★★☆☆☆</span>
+                  </p>
+                </div>
               </article>
               <article>
-              <img src="https://img.icons8.com/color/48/000000/api.png" alt="Rest Framework icon" class="icon">
-              <div>
-              <h4>Rest Framework</h4>
-              <p>Basique</p>
-              </div>
+                <img src="https://img.icons8.com/color/48/000000/api.png" alt="Rest Framework icon" class="icon">
+                <div>
+                  <h4>Rest Framework</h4>
+                  <p>
+                    <span title="Basique">★★☆☆☆</span>
+                  </p>
+                </div>
               </article>
               <article>
-              <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django icon" class="icon">
-              <div>
-              <h4>Django</h4>
-              <p>Intermediare</p>
-              </div>
+                <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django icon" class="icon">
+                <div>
+                  <h4>Django</h4>
+                  <p>
+                    <span title="Intermédiaire">★★★☆☆</span>
+                  </p>
+                </div>
               </article>
               <article>
-              <img src="https://img.icons8.com/color/48/000000/git.png" alt="Git icon" class="icon">
-              <div>
-              <h4>Git</h4>
-              <p>Intermediare</p>
-              </div>
+                <img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" alt="FastAPI icon" class="icon" >
+                <div>
+                  <h4>FastAPI</h4>
+                  <p>
+                    <span title="Intermédiaire">★★★☆☆</span>
+                  </p>
+                </div>
               </article>
-              </div>
+              
             </div>
+          </div>
+        </div>
+        <div class="comp-section">
+          <img src="assets/add.png" alt="" width="20" height="20">
+          <p style="text-align: left;">Développement Mobile</p>
+        </div>
+        <div class="skills-container">
+          <div class="skill-detail">
+            <div class="article-container">
+              <article>
+                <img src="https://img.icons8.com/?size=48&id=pCvIfmctRaY8&format=png" alt="Docker icon" class="icon">
+                <div>
+                  <h4>Flutter</h4>
+                  <p>
+                    <span title="Basique">★&#9734;☆☆☆</span>
+                  </p>
+                </div>
+              </article>
+              <article>
+                <img src="https://img.icons8.com/?size=80&id=25Sjy8fKExYA&format=png" alt="VSCode icon" class="icon">
+                <div>
+                  <h4>Réact Native</h4>
+                  <p>
+                    <span title="Basique">★&#9734;☆☆☆</span>
+                  </p>
+                </div>
+              </article>
             </div>
+          </div>
+        </div>
+        <div class="comp-section">
+          <img src="assets/add.png" alt="" width="20" height="20">
+          <p style="text-align: left;">Outils et technologies</p>
+        </div>
+        <div class="skills-container">
+          <div class="skill-detail">
+            <div class="article-container">
+              <article>
+                <img src="https://img.icons8.com/color/48/000000/docker.png" alt="Docker icon" class="icon">
+                <div>
+                  <h4>Docker</h4>
+                  <p>
+                    <span title="Basique">★★☆☆☆</span>
+                  </p>
+                </div>
+              </article>
+              <article>
+                <img src="https://img.icons8.com/color/48/000000/git.png" alt="Git icon" class="icon">
+                <div>
+                  <h4>Git</h4>
+                  <p>
+                    <span title="Intermédiaire">★★★☆☆</span>
+                  </p>
+                </div>
+              </article>
+              <article>
+                <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" alt="VSCode icon" class="icon">
+                <div>
+                  <h4>VSCode</h4>
+                  <p>
+                    <span title="Basique">★★☆☆☆</span>
+                  </p>
+                </div>
+              </article>
+              <article>
+                <img src="https://img.icons8.com/?size=48&id=J0SgMWzAxqFj&format=png" alt="Jupyter Notebook icon" class="icon">
+                <div>
+                  <h4>Jupyter Notebook</h4>
+                  <p>
+                    <span title="Intermédiaire">★★★☆☆</span>
+                  </p>
+                </div>
+              </article>
+              <article>
+                <img src="https://img.icons8.com/color/48/000000/linux.png" alt="Linux icon" class="icon">
+                <div>
+                  <h4>Linux</h4>
+                  <p>
+                    <span title="Intermédiaire">★★★☆☆</span>
+                  </p>
+                </div>
+              </article>
+              <article>
+                <img src="https://img.icons8.com/?size=80&id=IoYmHUxgvrFB&format=png" alt="Postman icon" class="icon">
+                <div>
+                  <h4>Postman</h4>
+                  <p>
+                    <span title="Intermédiaire">★★★☆☆</span>
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Section Projets -->
       <section id="project" class="about">
         <div class="about-title">
-          <p class=" small-text">Parcourir Mes Récentes</p>
           <h2 class="title">Projets</h2>
         </div>
-        <div class="project-content">
-          <img class="project-img" src="https://assets.asana.biz/transform/eecc590b-169f-4645-a36f-d366d7cac99d/article-leadership-eisenhower-matrix-2x?io=transform:fill,width:1120&format=webp" alt="Project 1" class="project-img" />
+        <div class="project">
+          <div class="project-content">
+          <img class="project-img" src="https://img.icons8.com/?size=300&id=114416&format=png" alt="Project 1"  />
               <div>
                 <h3 class="">eMatrix</h3>
+                <p>Un gestionnaire de tâches personnels basé sur la matrice d'Eisenhower.</p>
                 <ul class="hero-btns">
-                  <li><a class="btn btn-outline" href="https://github.com/tresor-del/ematrix">GitHub</a></li>
-                  <li><a href="#" class="btn btn-grey">Live Démo</a></li>
+                  <li><a  href="https://github.com/tresor-del/ematrix" class="project-link">Voir sur GitHub</a></li> ou 
+                  <li><a href="#" class="project-link">Voir un live Démo</a></li>
                 </ul>
               </div>
                 
         </div>
+        <div class="project-content">
+          <img class="project-img" src="https://img.icons8.com/?size=300&id=64054&format=png" alt="UrlShortler logo"  />
+              <div>
+                <div class="project-title">
+                  <h3 class="">UrlShortler</h3>
+                </div>
                 
+                <p>Un racourcisseur d'url pour gérer les longs URLs</p>
+                <ul class="hero-btns">
+                  <li><a  href="https://github.com/tresor-del/ematrix" class="project-link">Voir sur GitHub</a></li> ou 
+                  <li><a href="#" class="project-link" >Voir un live Démo</a></li>
+                </ul>
+              </div>
+                
+        </div>
+
+        <a href="https://github.com/tresor-del" target="_blank" class="project-link project-final-link">
+          Voir plus sur Github
+          <img src="https://image.shutterstock.com/image-vector/external-link-icon-user-will-150nw-546014650.jpg" alt="" width="30">
+        </a>
+
         </div>
       </section>
 
       <!-- Section contact -->
       <section id="contact" class="about">
         <div class="about-title">
-          <p class="small-text">Entrer en Contact</p>
+          <!-- <p class="small-text">Entrer en Contact</p> -->
           <h2 class="title">Me Contacter</h2>
         </div>
-        <div class="project-c">
-          <div class="project-content">
+          <div class="contact">
             <div class="contact-info-container">
-            <img src="https://img.icons8.com/ios-filled/50/000000/email.png" alt="Email Icon" class="contact-icon" style="width: 4rem;">
-            <p><a class="btn btn-outline" href="mailto:tresoradzanto7@gmail.com" style="font-size: 1.5rem;">tresoradzanto7@gmail.com</a></p>
+            <img src="assets/gmail.png" alt="Email Icon">
+            <div class="contact-info-content-text">
+              <p>Email</p>
+            <p><a  href="mailto:tresoradzanto7@gmail.com" style="font-size: 1.5rem;">tresoradzanto7@gmail.com</a></p>
+            </div>
             </div>
             <div class="contact-info-container">
-              <img src="https://img.icons8.com/ios-filled/50/000000/whatsapp.png" alt="Whatsapp Icon" class="contact-icon" style="width: 4rem;">
-                <p><a class="btn btn-grey" href="https://wa.me/98935845" style="font-size: 1.5rem;">Whatsapp messenger</a></p>
+              <img src="assets/whatsapp.png" alt="Whatsapp Icon">
+                <div class="contact-info-container-text">
+                  <p>Whatsapp</p>
+              <p><a  href="https://wa.me/98935845" style="font-size: 1.5rem;">Envoyer moi un message</a></p>
+                </div>
+              </div>
+              <div class="contact-info-container">
+              <img src="assets/telephone.png" alt="Whatsapp Icon">
+                <div class="contact-info-container-text">
+                  <p>Télephone</p>
+              <p><a  href="https://wa.me/98935845" style="font-size: 1.5rem;">+228 98935845</a></p>
+                </div>
               </div>
         </div>
-        </div>
-        
-
       </section>
 
     </main>
 
-    <footer style="text-align: center;">
-      <p class="small-text">Copyright &#169; 2025 Trésor Adzanto. Tous droits reservé.</p>
-    </footer>
+    <footer>
+  <div class="footer-content" style="max-width: 800px; margin: 0 auto;">
+    <p class="small-text">
+      Copyright &copy; <span class="date"></span> Trésor Adzanto
+    </p>
+    <p class="small-text">
+      Conçu avec <span aria-label="cœur">❤️</span> 
+    </p>
+  </div>
+</footer>
+<script>
+  document.querySelector('.date').textContent = new Date().getFullYear();
+</script>
   </div>
 
 </body>
