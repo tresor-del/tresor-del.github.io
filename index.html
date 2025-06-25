@@ -1,589 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-  <link rel="icon" href="https://img.icons8.com/?size=450&id=27irm8EoQrle&format=png" type="image/x-icon">
-  <title>Trésor Adzanto</title>
-</head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trésor Adzanto</title>
 
-<body>
+     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script> -->
 
-  <div class="container">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
-    <div class="fab-container">
-      <img class="fab" src="https://img.icons8.com/?size=50&id=QwXNdsIxTEqF&format=png" alt="Menu">
-
-      <div class="fab-menu">
-        <a href="#" id="light-mode-btn"><i class="fas fa-sun"></i> Clair</a>
-        <a href="#" id="dark-mode-btn"><i class="fas fa-moon"></i> Sombre</a>
-        <a href="#"><i class="fas fa-share-alt"></i> Share</a>
-        <a href="#"><i class="fas fa-comment-alt"></i> Feedbacks</a>
-      </div>
-    </div>
+    <link rel="stylesheet" href="main.css">
 
     <script>
-      // Gestion améliorée du thème
-      function setTheme(theme) {
-        document.documentElement.classList.remove('light', 'dark');
-        document.documentElement.classList.add(theme);
-        localStorage.setItem('theme', theme);
-        
-        // Force le recalcul des variables CSS
-        document.documentElement.style.setProperty('color-scheme', theme);
-      }
 
-      // Initialisation
-      function initTheme() {
-        const savedTheme = localStorage.getItem('theme');
-        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        
-        if (savedTheme) {
-          setTheme(savedTheme);
-        } else {
-          setTheme(systemDark ? 'dark' : 'light');
-        }
-      }
+            function showPage(page) {
+                // Hide all other pages
+                document.querySelectorAll('.div').forEach(div => {
+                    div.style.display = 'none';
+                });
 
-      // Écouteur pour les changements système
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-        if (!localStorage.getItem('theme')) {
-          setTheme(e.matches ? 'dark' : 'light');
-        }
-      });
+                // Show requested page
+                const target = document.querySelector(`#${page}`);
+                if (target) {
+                    target.style.display = 'block';
+                }
+            }
 
-      // Boutons
-      document.getElementById('light-mode-btn').addEventListener('click', (e) => {
-        e.preventDefault();
-        setTheme('light');
-      });
+            document.addEventListener('DOMContentLoaded', function() {
+                // Show the first page by default
+                const firstButton = document.querySelector('button[data-page]');
+                if (firstButton) {
+                    showPage(firstButton.dataset.page);
+                    firstButton.classList.add('active');
+                }
 
-      document.getElementById('dark-mode-btn').addEventListener('click', (e) => {
-        e.preventDefault();
-        setTheme('dark');
-      });
-
-      // Initialiser au chargement
-      document.addEventListener('DOMContentLoaded', initTheme);
+                document.querySelectorAll('button[data-page]').forEach(button => {
+                    button.onclick = function() {
+                        // Remove 'active' from all buttons
+                        document.querySelectorAll('button[data-page]').forEach(btn => btn.classList.remove('active'));
+                        // Add 'active' to the clicked button
+                        this.classList.add('active');
+                        showPage(this.dataset.page);
+                    };
+                });
+            });
     </script>
-    <script>
-      document.querySelector('.fab').addEventListener('click', function(event) {
-        event.stopPropagation();
-        const menu = document.querySelector('.fab-menu');
-        menu.classList.toggle('show');
-      });
 
-      window.addEventListener('click', function() {
-        const menu = document.querySelector('.fab-menu');
-        menu.classList.remove('show');
-      });
+  </head>
+  <body>
 
-      document.querySelector('.fab-menu').addEventListener('click', function(event) {
-        event.stopPropagation();
-      });
-    </script>
-  
-    <header>
+    <div class="container">
 
-      <!-- Navbar -->
-        <!-- Navbar Desktop -->
-        <nav class="navbar-container">
-          <p class="logo">@TAdzanto</p>
-          <ul class="navbar-links-container">
-            <li><a class="navbar-link" href="#about">
-              <div class="wrapper">
-                A propos
-                <!-- <div class="line"></div> -->
-              </div>
-            </a></li>
-            <li><a class="navbar-link" href="#skill">
-              <div class="wrapper">
-                Compétences
-                <!-- <div class="line"></div> -->
-              </div>
-            </a></li>
-            <li><a class="navbar-link" href="#project">
-              <div class="wrapper">
-                Projets
-                <!-- <div class="line"></div> -->
-              </div>
-            </a></li>
-            <li><a class="navbar-link" href="#contact">
-              <div class="wrapper">
-                contact
-                <!-- <div class="line"></div> -->
-              </div>
-            </a></li>
-            <li><a class="navbar-link blog" href="blogs.html">
-              <div>
-                Blogs
-                <!-- <div class="line"></div> -->
-              </div>
-            </a></li>
-          </ul>
-        </nav>
-
-        <!-- Navbar Mobile -->
-        <nav class="navbar-container-mobile">
-          <p class="logo">@TAdzanto</p>
-          <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-              <span></span>
-              <span></span>
-              <span></span>
+        <section class="profile">
+            <div class="profile-image">
+                <img src="./assets/1744215943563.jpeg" alt="Image de Trésor">
             </div>
-              <div class="navbar-links-container-mobile">
-                <div>
-                  <a class="navbar-link-mobile" href="#project" onclick="toggleMenu()">Projets</a>
-                  <a class="navbar-link-mobile" href="#contact" onclick="toggleMenu()">Contact</a>
-                  <a class="navbar-link-mobile" href="#about" onclick="toggleMenu()">A propos</a>
-                  <a class="navbar-link-mobile" href="#skill" onclick="toggleMenu()">Compétences</a>
-                  <a class="navbar-link-mobile" href="blogs.html">Blogs</a>
+
+            <div class="profile-info">
+                <div class="profile-name">
+                <h1 translate="no"> Trésor Adzanto</h1>
                 </div>
+                <div class="profile-links">
                 
-              </div>
-          </div>
-        </nav>
-
-        <script>
-
-        function toggleMenu() {
-          const menu = document.querySelector('.navbar-container-mobile .navbar-links-container-mobile');
-          const hamburger = document.querySelector('.hamburger-icon');
-          menu.classList.toggle('show');
-          hamburger.classList.toggle('active');
-          if (menu.classList.contains('show')) {
-            menu.style.display = 'block';
-          } else {
-            menu.style.display = 'none';
-          }
-        }
-
-
-        </script>
-
-        <!-- Hero -->
-        <section class="hero">
-          <div class="hero-img">
-            <img src="./assets/1744215943563.jpeg" alt="Image de Trésor">
-          </div>
-          
-          <div class="hero-content">
-            <div class="hero-info">
-              <h1 class="hero-title" translate="no"> <span></span>Hi, I'm <strong>Trésor</strong></h1>
-              <p class="small-text"> IT student and technology enthusiast,<br> deeply passionate about <strong>Artificial Intelligence</strong>  <br> and <strong>Cyber Security</strong> </p>
-            </div>
-            <ul class="hero-btns">
-              <li><a target="_blank" class="btn2 btn-outline" href="./assets/CV.pdf">Voir mon cv</a></li>
-              <li><a href="#projets" class="btn2 btn-grey">Mes projets</a></li>
-            </ul>
-            <div class="hero-links">
-              <!-- Liens vers les profils de réseaux sociaux -->
-              <a target="_blank" class="hero-link" href="https://github.com/tresor-del/" title="Visitez mon profil GitHub">
-                <i class="bi bi-github fs-5"></i>
-                <!-- <img src="https://icon.icepanel.io/Technology/svg/GitHub.svg" alt="Github account" width="20" height="20"> -->
-
-              </a>
-              <a target="_blank" class="hero-link" href="https://www.linkedin.com/in/tr%C3%A9sor-adzanto-738147283/"
-                title="Visitez mon profil LinkedIn">
-                <i class="bi bi-linkedin fs-5"></i>
-                 <!-- <img src="https://icon.icepanel.io/Technology/svg/LinkedIn.svg" alt="LinkedIn account" width="20" height="20"> -->
+                <a target="_blank" class="hero-link" href="https://github.com/tresor-del/" title="Visitez mon profil GitHub">
+                    <i class="bi bi-github fs-5"></i>
+                    <!-- <img src="https://icon.icepanel.io/Technology/svg/GitHub.svg" alt="Github account" width="20" height="20"> -->
                 </a>
-              <a target="_blank" class="hero-link" href="https://www.facebook.com/profile.php?id=100071136857161"
-                title="Visitez mon profil Facebook">
-                <i class="bi bi-facebook fs-5"></i>
-                 <!-- <img src="https://icon.icepanel.io/Technology/svg/Facebook.svg" alt="Facebook account" width="20" height="20"> -->
-              </a>
-              <a target="_blank" class="hero-link" href="https://www.instagram.com/motivperso.mp24/"
-                title="Visitez mon profil Instagram">
-                 <i class="bi bi-instagram fs-5"></i>
-                 <!-- <img src="https://icon.icepanel.io/Technology/svg/Instagram.svg" alt="Instagram account" width="20" height="20"> -->
-              </a>
-              <a target="_blank" class="hero-link" href="https://x.com/TAdzanto" title="Visitez mon profil Twitter">
-                <i class="bi bi-twitter fs-5"></i>
-                 <!-- <img src="https://icon.icepanel.io/Technology/svg/Twitter.svg" alt="X account" width="20" height="20"> -->
-              </a>
+                <a target="_blank" class="hero-link" href="https://www.linkedin.com/in/tr%C3%A9sor-adzanto-738147283/"
+                    title="Visitez mon profil LinkedIn">
+                    <i class="bi bi-linkedin fs-5"></i>
+                    <!-- <img src="https://icon.icepanel.io/Technology/svg/LinkedIn.svg" alt="LinkedIn account" width="20" height="20"> -->
+                    </a>
+                <a target="_blank" class="hero-link" href="https://www.facebook.com/profile.php?id=100071136857161"
+                    title="Visitez mon profil Facebook">
+                    <i class="bi bi-facebook fs-5"></i>
+
+                <a target="_blank" class="hero-link" href="https://x.com/TAdzanto" title="Visitez mon profil Twitter">
+                    <i class="bi bi-twitter fs-5"></i>
+                    <!-- <img src="https://icon.icepanel.io/Technology/svg/Twitter.svg" alt="X account" width="20" height="20"> -->
+                </a>
+                </div>
             </div>
-          </div>
+
         </section>
-    </header>
 
-    <main> 
+        <section class="info">
 
-      <!-- Section A propos -->
-      <section id="about" class="about">
-        <div class="about-title">
-          <!-- <p class="small-text">Apprenez a me connaitre</p> -->
-          <h2>A propos de moi</h2>
-        </div>
-        <div class="about-content">
-          <!-- <img src="https://img.icons8.com/?size=450&id=27irm8EoQrle&format=png" alt="Avatar" class="avatar" > -->
-          <div class="text">
-            <div class="skill">
-              <!-- <div>
-                <img src="https://certificates.cs50.io/ebb304ca-512d-464c-83b6-ac9a1f739d6a.png" alt=" CS50W certificat" *>
-                <h3 class="skill-title">Certificat</h3>
-                <p class="skill-text" >CS50W<br> Développement Web avec Python et JavaScript</p>
-                <a href="https://certificates.cs50.io/ebb304ca-512d-464c-83b6-ac9a1f739d6a.pdf?size=letter">voir</a>
-              </div> -->
-            </div>
-            <div>
-              <p class="t " style="font-size: 2rem;">
-                Je m'appelle <strong>Trésor Adzanto</strong>, étudiant ingénieur en informatique, passionné par les technologies du web, <strong>l'Intelligence Artificiel </strong>et <strong>la Cyber Sécurité</strong>. Grâce à une formation rigoureuse, j’ai acquis une solide maîtrise des outils frontend et backend. Mon objectif en tant que futur ingénieur est de concevoir des solutions <strong>innovantes, efficaces</strong> et alignées sur les besoins concrets du monde réel, tout en respectant les meilleures pratiques de l’industrie. Curieux et motivé, je suis toujours en quête de nouvelles opportunités pour <strong>apprendre, évoluer</strong> et contribuer dans ce domaine passionnant.
-              </p>
-            </div>
-          </div>
-        </div>            
-        </div>
-      </section>
-
-      <!-- Section Compétences -->
-      <section id="skill" class="skills">
-        <div class="skills-title">
-          <!-- <p class="small-text">Explorer mes</p> -->
-          <h2>Languages</h2>
-        </div>
-        <div class="skills-content">
-          <div class="sk">
-          <div class="comp-section">
-          <img src="assets/add.png" alt="" width="20" height="20">
-          <p style="text-align: left;">Languages</p>
-        </div>
-        <div class="skills-container">
-          <div class="skill-detail">
-            <!-- <h3 class="title">Frontend</h3> -->
-            <div class="article-container">
-              <!-- <article>
-                <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML icon" class="icon">
-                <div>
-                  <h4>HTML</h4>
-                  <p>
-                    <span title="Intermédiaire">★★★&#9733;☆</span>
-                  </p>
-                </div>
-              </article>
-              <article>
-                <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS icon" class="icon">
-                <div>
-                  <h4>CSS</h4>
-                  <p>
-                    <span title="Intermédiaire">★★★&#9733;☆</span>
-                  </p>
-                </div>
-              </article>
-              <article>
-                <img src="https://img.icons8.com/color/48/000000/sass.png" alt="SASS icon" class="icon">
-                <div>
-                  <h4>SASS</h4>
-                  <p>
-                    <span title="Basique">★★☆☆☆</span>
-                  </p>
-                </div>
-              </article> -->
-              <article>
-                <img src="https://icon.icepanel.io/Technology/svg/JavaScript.svg" alt="JavaScript icon" class="icon">
-                <div>
-                  <h4>JavaScript</h4>
-                  <p>
-                    <span title="Intermédiaire">★★★☆☆</span>
-                  </p>
-                </div>
-              </article>
-              <article>
-                <img src="https://icon.icepanel.io/Technology/svg/Python.svg" alt="JavaScript icon" class="icon">
-                <div>
-                  <h4>Python</h4>
-                  <p>
-                    <span title="Intermédiaire">★★★☆☆</span>
-                  </p>
-                </div>
-              </article>
-              <!-- <article>
-                <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React icon" class="icon">
-                <div>
-                  <h4>React</h4>
-                  <p>
-                    <span title="Basique">★★☆☆☆</span>
-                  </p>
-                </div>
-              </article> -->
-            </div>
-          </div>
-
-        </div>
-        
-      </div>
-        <div class="sk">
-          <div class="comp-section" >
-            <img src="assets/add.png" alt="" width="20" height="20">
-            <p style="text-align: left;">Frameworks</p>
-          </div>
-          <div class="skills-container">
-            <div class="skill-detail">
-            <!-- <h3 class="title">Frameworks</h3> -->
-            <div class="article-container">
-              <!-- <article>
-                <img src="https://img.icons8.com/color/48/000000/postgreesql.png" alt="PostgreSQL icon" class="icon">
-                <div>
-                  <h4>PostgreSQL</h4>
-                  <p>
-                    <span title="Basique">★★☆☆☆</span>
-                  </p>
-                </div>
-              </article> -->
-                <article>
-                <img src="https://icon.icepanel.io/Technology/svg/FastAPI.svg" alt="FastAPI icon" class="icon" >
-                <div>
-                  <h4>FastAPI</h4>
-                  <p>
-                    <span title="Intermédiaire">★★★☆☆</span>
-                  </p>
-                </div>
-              </article>
-              <article>
-                <img src="https://icon.icepanel.io/Technology/svg/React.svg" alt="React icon" class="icon">
-                <div>
-                  <h4>React</h4>
-                  <p>
-                    <span title="Basique">★★☆☆☆</span>
-                  </p>
-                </div>
-              </article>
-              <article>
-                <img src="https://icon.icepanel.io/Technology/svg/Django.svg" alt="Rest Framework icon" class="icon">
-                <div>
-                  <h4>Django</h4>
-                  <p>
-                    <span title="Basique">★★☆☆☆</span>
-                  </p>
-                </div>
-              </article>
-              <article>
-                <img src="https://icon.icepanel.io/Technology/svg/Django-REST.svg" alt="Django icon" class="icon">
-                <div>
-                  <h4>Django-REST</h4>
-                  <p>
-                    <span title="Intermédiaire">★★★☆☆</span>
-                  </p>
-                </div>
-              </article>
-
-            </div>
-          </div>
-          </div>
-          
-        </div>
-        <div class="sk">
-          <!-- <div class="skills-container">
-          <div class="skill-detail">
-            <div class="article-container">
-              <article>
-                <img src="https://img.icons8.com/?size=48&id=pCvIfmctRaY8&format=png" alt="Docker icon" class="icon">
-                <div>
-                  <h4>Flutter</h4>
-                  <p>
-                    <span title="Basique">★&#9734;☆☆☆</span>
-                  </p>
-                </div>
-              </article>
-              <article>
-                <img src="https://img.icons8.com/?size=80&id=25Sjy8fKExYA&format=png" alt="VSCode icon" class="icon">
-                <div>
-                  <h4>Réact Native</h4>
-                  <p>
-                    <span title="Basique">★&#9734;☆☆☆</span>
-                  </p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div> -->
-        <div class="comp-section">
-          <img src="assets/add.png" alt="" width="20" height="20">
-          <p style="text-align: left;">Outils et technologies</p>
-        </div>
-        <div class="skills-container">
-          <div class="skill-detail">
-            <div class="article-container">
-              <article>
-                <img src="https://icon.icepanel.io/Technology/svg/Linux.svg" alt="Linux icon" class="icon">
-                <div>
-                  <h4>Linux</h4>
-                  <p>
-                    <span title="Intermédiaire">★★★☆☆</span>
-                  </p>
-                </div>
-              </article>
-              <article>
-                <img src="https://icon.icepanel.io/Technology/svg/Docker.svg" alt="Docker icon" class="icon">
-                <div>
-                  <h4>Docker</h4>
-                  <p>
-                    <span title="Basique">★★☆☆☆</span>
-                  </p>
-                </div>
-              </article>
-              <article>
-                <img src="https://icon.icepanel.io/Technology/svg/Git.svg" alt="Git icon" class="icon">
-                <div>
-                  <h4>Git</h4>
-                  <p>
-                    <span title="Intermédiaire">★★★☆☆</span>
-                  </p>
-                </div>
-              </article>
-              <article>
-                <img src="https://icon.icepanel.io/Technology/svg/Visual-Studio-Code-%28VS-Code%29.svg" alt="VSCode icon" class="icon">
-                <div>
-                  <h4>VSCode</h4>
-                  <p>
-                    <span title="Basique">★★☆☆☆</span>
-                  </p>
-                </div>
-              </article>
-              <!-- <article>
-                <img src="https://img.icons8.com/?size=48&id=J0SgMWzAxqFj&format=png" alt="Jupyter Notebook icon" class="icon">
-                <div>
-                  <h4>Jupyter Notebook</h4>
-                  <p>
-                    <span title="Intermédiaire">★★★☆☆</span>
-                  </p>
-                </div>
-              </article>
-              
-              <article>
-                <img src="https://img.icons8.com/?size=80&id=IoYmHUxgvrFB&format=png" alt="Postman icon" class="icon">
-                <div>
-                  <h4>Postman</h4>
-                  <p>
-                    <span title="Intermédiaire">★★★☆☆</span>
-                  </p>
-                </div>
-              </article> -->
-            </div>
-          </div>
-        </div>
-        </div>
-        </div>
-        
-        
-      </section>
-
-      <!-- Section Projets -->
-      <section id="project" class="about">
-        <div class="about-title">
-          <h2 class="title">Projets</h2>
-        </div>
-        <div class="project">
-          <div class="project-content">
-          <img class="project-img" src="https://img.icons8.com/?size=300&id=114416&format=png" alt="Project 1"  />
-              <div>
-                <h4 class="">eMatrix</h4>
-                <p class="small-text">Un gestionnaire de tâches personnelles basé sur la matrice d'Eisenhower.</p>
-                <ul class="hero-btns">
-                  <li><a  href="https://github.com/tresor-del" class="project-link">Voir sur GitHub</a></li>
+            <nav>
+                <ul>
+                    <li><button class="button" data-page="about-me">About Me</button></li>
+                    <li><button class="button" data-page="skills">Skills</button></li>
+                    <li><button class="button" data-page="projects">Projects</button></li>
+                    <li><button class="button" data-page="articles">Articles</button></li>
                 </ul>
-              </div>
-                
-        </div>
-        <div class="project-content">
-          <img class="project-img" src="https://img.icons8.com/?size=300&id=64054&format=png" alt="UrlShortler logo"  />
-              <div>
-                <div class="project-title">
-                  <h4 class="">UrlShortler</h4>
-                </div>
-                
-                <p class="small-text">Un racourcisseur d'url pour gérer les longs URLs </p>
-                <ul class="hero-btns">
-                  <li><a  href="https://github.com/tresor-del/urlshortener" target="_blank" class="project-link">Voir sur GitHub</a></li> 
-                </ul>
-              </div>
-                
-        </div>
-        <div class="project-content">
-          <img class="project-img" src="https://img.icons8.com/?size=300&id=64054&format=png" alt="UrlShortler logo"  />
-              <div>
-                <div class="project-title">
-                  <h4 class="">Authapp</h4>
-                </div>
-                
-                <p class="small-text"> Une api développé avec django rest framework, réutilisable</p>
-                <ul class="hero-btns">
-                  <li><a  href="https://github.com/tresor-del/auth_app" target="_blank" class="project-link">Voir sur GitHub</a></li> 
-                </ul>
-              </div>
-                
-        </div>
-        </div>
-        <div class=" project-final-link">
-          <a href="https://github.com/tresor-del"target="_blank" class="project-link">
-          Voir plus sur Github
-        </a>
-        </div>
-         
-      </section>
+            </nav>
 
-      <!-- Section contact -->
-      <section id="contact" class="about">
-        <div class="about-title">
-          <!-- <p class="small-text">Entrer en Contact</p> -->
-          <h2 class="title">Me Contacter</h2>
-        </div>
-          <div class="contact">
-            <div class="contact-info-container">
-              <a  href="mailto:tresoradzanto7@gmail.com" style="font-size: 1.5rem;">
-                <img src="assets/gmail.png" alt="Email Icon">
-                <div class="contact-info-content-text">
-                  <p class="small-text">Email</p>
-                  <p class="small-text">tresoradzanto7@gmail.com</a></p>
+            <div class="info-content">
+
+                <div class="div" id="about-me">
+                    <div>
+                        <div>
+                            <small>Let me introduce myself</small>
+                            <div>
+                                <p>
+  I am a self-taught learner and a computer engineering student with a strong passion for web technologies and <strong>Artificial Intelligence</strong>. Through rigorous training and hands-on projects, I have developed solid skills in both frontend and backend development.  
+
+  As a future engineer, my goal is to design <strong>innovative</strong> and <strong>efficient</strong> solutions that address real-world needs, while following industry best practices.  
+  Curious and highly motivated, I am constantly seeking opportunities to <strong>learn</strong>, <strong>grow</strong>, and contribute meaningfully in this exciting field.
+</p>
+
+                            </div>
+                        </div>
+                        <div>
+                            <small>My Roadmap to Success</small>
+                            <div>
+                                <p>
+                               I started my programming journey with the CS50W course, where I learned not only how to code but also how to think like a programmer. It taught me the fundamentals of web development, problem-solving, and best practices in software engineering.
+
+Currently, I’m continuing my learning journey by taking the Machine Learning course offered by Google on Google Developers.
+
+My goal is to become a skilled programmer in artificial intelligence and related technologies. I'm passionate about building real-world solutions and continuously improving my skills.
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <small>My Certifications</small>
+                            <div class="certif">
+                                <p>Cs50 Web Programming with Python and JavaScript</p>
+                                <a href="https://certificates.cs50.io/ebb304ca-512d-464c-83b6-ac9a1f739d6a.png" target="_blank"><img src="https://certificates.cs50.io/ebb304ca-512d-464c-83b6-ac9a1f739d6a.png" alt=" CS50W certificat" width="100"></a>
+                            </div>
+                            
+                        </div>
+                        <div>
+                            <small>Click <a target="_blank" href="assets/CV.pdf">here</a> to view my full résumé.</small>
+
+                        </div>
+                    </div>
+                    
                 </div>
-              </a>
+                    
+                    <div id="skills" class="skills div">
+                        <p class="skills-intro">
+  Here are the technologies I’m most familiar with:
+</p>
+                        <div class="skills-content">
+                        <div class="sk">
+                        <div class="skills-container">
+                        <div class="skill-detail">
+                            <small>Main Languages</small>
+                            <!-- <h3 class="title">Frontend</h3> -->
+                            <div class="article-container">
+
+                            
+                            <!-- <article>
+                                <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML icon" class="icon">
+                                <div>
+                                <h4>HTML</h4>
+                                <p>
+                                    <span title="Intermédiaire">★★★&#9733;☆</span>
+                                </p>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS icon" class="icon">
+                                <div>
+                                <h4>CSS</h4>
+                                <p>
+                                    <span title="Intermédiaire">★★★&#9733;☆</span>
+                                </p>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="https://img.icons8.com/color/48/000000/sass.png" alt="SASS icon" class="icon">
+                                <div>
+                                <h4>SASS</h4>
+                                <p>
+                                    <span title="Basique">★★☆☆☆</span>
+                                </p>
+                                </div>
+                            </article> -->
+                            <article>
+                                <img src="https://icon.icepanel.io/Technology/svg/JavaScript.svg" alt="JavaScript icon" class="icon">
+                                <div>
+                                <h4>JavaScript</h4>
+                                <p>
+                                    <span title="Intermédiaire">★★★☆☆</span>
+                                </p>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="https://icon.icepanel.io/Technology/svg/Python.svg" alt="JavaScript icon" class="icon">
+                                <div>
+                                <h4>Python</h4>
+                                <p>
+                                    <span title="Intermédiaire">★★★☆☆</span>
+                                </p>
+                                </div>
+                            </article>
+                            <!-- <article>
+                                <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React icon" class="icon">
+                                <div>
+                                <h4>React</h4>
+                                <p>
+                                    <span title="Basique">★★☆☆☆</span>
+                                </p>
+                                </div>
+                            </article> -->
+                            </div>
+                        </div>
+
+                        </div>
+                        
+                    </div>
+                        <div class="sk">
+                        <div class="skills-container">
+                            <div class="skill-detail">
+                                <small>Frameworks</small>
+                            <!-- <h3 class="title">Frameworks</h3> -->
+                            <div class="article-container">
+                            <!-- <article>
+                                <img src="https://img.icons8.com/color/48/000000/postgreesql.png" alt="PostgreSQL icon" class="icon">
+                                <div>
+                                <h4>PostgreSQL</h4>
+                                <p>
+                                    <span title="Basique">★★☆☆☆</span>
+                                </p>
+                                </div>
+                            </article> -->
+                                <article>
+                                <img src="https://icon.icepanel.io/Technology/svg/FastAPI.svg" alt="FastAPI icon" class="icon" >
+                                <div>
+                                <h4>FastAPI</h4>
+                                <p>
+                                    <span title="Intermédiaire">★★★☆☆</span>
+                                </p>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="https://icon.icepanel.io/Technology/svg/React.svg" alt="React icon" class="icon">
+                                <div>
+                                <h4>React</h4>
+                                <p>
+                                    <span title="Basique">★★☆☆☆</span>
+                                </p>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="https://icon.icepanel.io/Technology/svg/Django.svg" alt="Rest Framework icon" class="icon">
+                                <div>
+                                <h4>Django</h4>
+                                <p>
+                                    <span title="Basique">★★☆☆☆</span>
+                                </p>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="https://icon.icepanel.io/Technology/svg/Django-REST.svg" alt="Django icon" class="icon">
+                                <div>
+                                <h4>Django-REST</h4>
+                                <p>
+                                    <span title="Intermédiaire">★★★☆☆</span>
+                                </p>
+                                </div>
+                            </article>
+
+                            </div>
+                        </div>
+                        </div>
+                        
+                        </div>
+                        <div class="sk">
+                        <!-- <div class="skills-container">
+                        <div class="skill-detail">
+                            <div class="article-container">
+                            <article>
+                                <img src="https://img.icons8.com/?size=48&id=pCvIfmctRaY8&format=png" alt="Docker icon" class="icon">
+                                <div>
+                                <h4>Flutter</h4>
+                                <p>
+                                    <span title="Basique">★&#9734;☆☆☆</span>
+                                </p>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="https://img.icons8.com/?size=80&id=25Sjy8fKExYA&format=png" alt="VSCode icon" class="icon">
+                                <div>
+                                <h4>Réact Native</h4>
+                                <p>
+                                    <span title="Basique">★&#9734;☆☆☆</span>
+                                </p>
+                                </div>
+                            </article>
+                            </div>
+                        </div>
+                        </div> -->
+                        <div class="skills-container">
+                        <div class="skill-detail">
+                            <small>Tools/Technologies</small>
+                            <div class="article-container">
+                            <article>
+                                <img src="https://icon.icepanel.io/Technology/svg/Linux.svg" alt="Linux icon" class="icon">
+                                <div>
+                                <h4>Linux</h4>
+                                <p>
+                                    <span title="Intermédiaire">★★★☆☆</span>
+                                </p>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="https://icon.icepanel.io/Technology/svg/Docker.svg" alt="Docker icon" class="icon">
+                                <div>
+                                <h4>Docker</h4>
+                                <p>
+                                    <span title="Basique">★★☆☆☆</span>
+                                </p>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="https://icon.icepanel.io/Technology/svg/Git.svg" alt="Git icon" class="icon">
+                                <div>
+                                <h4>Git</h4>
+                                <p>
+                                    <span title="Intermédiaire">★★★☆☆</span>
+                                </p>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="https://icon.icepanel.io/Technology/svg/Visual-Studio-Code-%28VS-Code%29.svg" alt="VSCode icon" class="icon">
+                                <div>
+                                <h4>VSCode</h4>
+                                <p>
+                                    <span title="Basique">★★☆☆☆</span>
+                                </p>
+                                </div>
+                            </article>
+                            <!-- <article>
+                                <img src="https://img.icons8.com/?size=48&id=J0SgMWzAxqFj&format=png" alt="Jupyter Notebook icon" class="icon">
+                                <div>
+                                <h4>Jupyter Notebook</h4>
+                                <p>
+                                    <span title="Intermédiaire">★★★☆☆</span>
+                                </p>
+                                </div>
+                            </article>
+                            
+                            <article>
+                                <img src="https://img.icons8.com/?size=80&id=IoYmHUxgvrFB&format=png" alt="Postman icon" class="icon">
+                                <div>
+                                <h4>Postman</h4>
+                                <p>
+                                    <span title="Intermédiaire">★★★☆☆</span>
+                                </p>
+                                </div>
+                            </article> -->
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+        
+                    </div>
+
+
+                <div class="div" id="projects">
+
+                    <div class="project">
+                        <div class="project-content">
+                            <img class="project-img" src="https://img.icons8.com/?size=300&id=114416&format=png" alt="Project 1"  />
+                            <div>
+                                <h4 class="">QuadraFlow</h4>
+                                <p class="small-text">A personal task manager based on the Eisenhower Matrix.</p>
+                                <p class="small-text"><strong>Languages/Tech:</strong> Python, Django, JavaScript</p>
+                                <a href="https://github.com/tresor-del" class="project-link" target="_blank">View on GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <img class="project-img" src="https://img.icons8.com/?size=300&id=64054&format=png" alt="UrlShortler logo"  />
+                            <div>
+                                <div class="project-title">
+                                    <h4 class="">UrlShortler</h4>
+                                </div>
+                                <p class="small-text">A URL shortener to manage long URLs.</p>
+                                <p class="small-text"><strong>Languages/Tech:</strong> Python, Django, JavaScript</p>
+                                <a href="https://github.com/tresor-del/urlshortener" target="_blank" class="project-link">View on GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <img class="project-img" src="https://img.icons8.com/?size=300&id=64054&format=png" alt="Authapp logo"  />
+                            <div>
+                                <div class="project-title">
+                                    <h4 class="">Authapp</h4>
+                                </div>
+                                <p class="small-text">A reusable API developed with Django REST Framework.</p>
+                                <p class="small-text"><strong>Languages/Tech:</strong> Python, Django REST Framework</p>
+                                <a href="https://github.com/tresor-del/auth_app" target="_blank" class="project-link">View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="div" id="articles">
+                    <h1>Comming soon !</h1>
+                </div>
             </div>
-            <div class="contact-info-container">
-              <a  href="https://wa.me/98935845" style="font-size: 1.5rem;">
-                <img src="assets/whatsapp.png" alt="Whatsapp Icon">
-                <div class="contact-info-container-text">
-                  <p class="small-text">Whatsapp</p>
-                  <p class="small-text">Envoyer moi un message</a></p>
-                </div>
-              </a>
-              </div>
-              <div class="contact-info-container">
-                <a  href="https://wa.me/98935845" style="font-size: 1.5rem;">
-                  <img src="assets/telephone.png" alt="Whatsapp Icon">
-                  <div class="contact-info-container-text">
-                    <p class="small-text">Télephone</p>
-                    <p class="small-text">+228 98935845</a></p>
-                  </div>
-                </a>
-              </div>
-        </div>
-      </section>
+            
 
-    </main>
 
-    <footer>
-  <div class="footer-content" style="max-width: 800px; margin: 0 auto;">
-    <p class="small-text">
-      Copyright &copy; <span class="date"></span> Trésor Adzanto
-    </p>
-    <p class="small-text">
-      Conçu avec <span aria-label="cœur">❤️</span> 
-    </p>
-  </div>
-</footer>
-<script>
-  document.querySelector('.date').textContent = new Date().getFullYear();
-</script>
-  </div>
+        </section>
 
-</body>
-
+    </div>
+    
+  </body>
 </html>

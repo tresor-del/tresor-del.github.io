@@ -14,6 +14,8 @@
     --color-accent-2: #F97316;
     /* Accent chaud / CTA */
 
+    --box-shadow: 0 8px 24px rgba(3, 3, 3, 0.5);
+
     --text-xxs: 0.625rem;
     /* 10px */
     --text-xs: 0.75rem;
@@ -124,7 +126,7 @@ h6 {
 
 
 p {
-    font-size: var(--text-base);
+    font-size: 16px;
     line-height: 1.6;
     color: var(--text-color);
     margin-bottom: 1rem;
@@ -245,6 +247,7 @@ small {
 
 .info nav ul li button{
     background-color: transparent;
+    color: var(--color-border);
     border: none;
     cursor: pointer;
     font-size: var(--text-base);
@@ -258,7 +261,7 @@ small {
     padding: 2rem;
     background-color: rgba(238, 239, 241, 0.8);
     border-radius: 10px;
-    height: 500px;
+    height: 550px;
     overflow: scroll;
     margin: 2rem;
 }
@@ -287,6 +290,103 @@ small {
     font-size: 1.5rem !important;
 }
 
+.skills-container {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  margin: 2rem;
+
+}
+
+.skills-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    
+}
+
+.sk{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.skill-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  background-color: var(--color-background);
+  box-shadow: var(--box-shadow);
+  width: 300px;
+  height: 200px;
+}
+
+.skill-detail small {
+    margin-top: 1rem;
+}
+
+.skill-detail img {
+  width: 20px;
+}
+
+.article-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  font-size: var(--text-base);
+}
+
+.article-container article {
+  display: flex;
+  gap: 1rem;
+}
+
+.article-container article h4 {
+  font-size: var(--text-2xl);
+  letter-spacing: normal;
+}
+
+.article-container article p {
+  font-size: var(--text-sm);
+  letter-spacing: normal;
+}
+
+
+.project{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:250px;
+  height: 300px;
+  box-shadow: var(--box-shadow);
+  padding: 2rem 3rem;
+  border-radius: 30px;
+  background-color: var(--color-background);
+}
+
+.project-content div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.project-content img {
+  max-width: 0;
+}
+
+
 
 @media screen and (max-width: 630px) {
 
@@ -314,9 +414,26 @@ small {
         align-items: center;
     }
 
+    .info-content {
+        padding: 2rem;
+        background-color: rgba(238, 239, 241, 0.8);
+        border-radius: 0;
+        height: 500px;
+        overflow: scroll;
+        margin: 0;
+    }
+
     .info nav ul li button{
-    font-size: var(--text-sm);
+    font-size: var(--text-bse);
+
 }
 
+.skills-content {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.project{
+    flex-direction: column;
+}
 
 }
