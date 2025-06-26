@@ -89,7 +89,8 @@
 
         <section class="info">
 
-            <nav>
+            <div id="nav-trigger"></div>
+            <nav class="info-nav">
                 <ul>
                     <li><button class="button" data-page="about-me">About Me</button></li>
                     <li><button class="button" data-page="skills">Skills</button></li>
@@ -97,6 +98,23 @@
                     <li><button class="button" data-page="articles">Articles</button></li>
                 </ul>
             </nav>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const nav = document.querySelector(".info-nav");
+                    const trigger = document.getElementById("nav-trigger");
+
+                    const observer = new IntersectionObserver(([entry]) => {
+                        if (!entry.isIntersecting) {
+                        nav.classList.add("at-top");
+                        } else {
+                        nav.classList.remove("at-top");
+                        }
+                });
+
+                observer.observe(trigger);
+                });
+            </script>
 
             <div class="info-content">
 
