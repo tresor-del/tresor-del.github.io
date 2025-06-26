@@ -148,6 +148,35 @@ small {
     font-size: 6rem;
 }
 
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #ccc;
+    border-top-color: #333;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
 .container {
     /* max-width: 1000px;
     margin: 0 auto;
@@ -423,12 +452,13 @@ small {
     }
 
     #nav-trigger {
-  height: 1px; /* ou 0px si tu veux totalement invisible */
-}
+        height: 1px;
+        /* ou 0px si tu veux totalement invisible */
+    }
 
     .info-nav.at-top {
         background: var(--white);
-    transition: background 0.3s, color 0.3s;
+        transition: background 0.3s, color 0.3s;
         background-image: url('assets/belle-photo-aerienne-d-une-cascade-entouree-d-une-colline-au-coucher-du-soleil.jpg');
         background-size: cover;
         background-position: start;
@@ -436,21 +466,21 @@ small {
     }
 
     .info-nav.at-top::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: inherit;
-    background-size: inherit;
-    background-position: inherit;
-    background-repeat: inherit;
-    filter: blur(8px);
-    z-index: 0;
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: inherit;
+        background-size: inherit;
+        background-position: inherit;
+        background-repeat: inherit;
+        filter: blur(8px);
+        z-index: 0;
     }
 
-  .info-nav.at-top>* {
-    position: relative;
-    z-index: 1;
-}
+    .info-nav.at-top>* {
+        position: relative;
+        z-index: 1;
+    }
 
 
     .info-content {
