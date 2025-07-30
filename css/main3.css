@@ -14,12 +14,20 @@ body {
     margin: 0 auto;
 }
 
+a{
+    color: #0070FF;
+}
+
+.active {
+    color: #6CB4EE;
+    text-decoration: underline;
+}
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
     gap: 2rem;
 }
 
@@ -29,12 +37,15 @@ body {
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    margin-top: 2rem;
 }
 
 .header h2 {
     font-weight: 700;
     font-size: 1.8rem;
     color: #333;
+    margin-bottom: 2rem;
+
 }
 
 .header .image img {
@@ -61,6 +72,9 @@ body {
 .content {
     width: 100%;
     color: #333;
+    line-height: 1.5;
+    margin-bottom: 4rem;
+    margin-top: 1rem;
 }
 
 .content p {
@@ -76,17 +90,43 @@ body {
 }
 
 .page ul {
-    margin-left: 1rem;
+    list-style-type: none;
+}
+
+.page ul svg {
+    width: 25px;
+}
+
+.page ul li a{
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.page ul li a {
+    gap: 0.5rem;
+    display: flex;
+    align-items: center;
 }
 
 #project {
-    margin-top: 1rem;
     display: flex;
     flex-direction: column;
 }
 
+.project-image{
+    background-color: #666;
+    padding: 1.5rem  1.5rem 0;
+    border-radius: 0.5rem 0.5rem 0 0;
+
+    display: flex;
+
+    align-items: center;
+}
+
 .project img {
-    width: 200px;
+    width: 300px;
+
 }
 
 .project {
@@ -103,26 +143,79 @@ body {
 
 .project button {
     padding: 0.5rem 1rem;
+    background-color: #0070FF;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: hover;
+}
+
+.project-info-links svg {
+    width: 20px;
+}
+
+.project-info-links button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.p {
+    color: #333 !important;
+    text-decoration: none !important;
+}
+
+.ins {
+    padding: 1rem;
+}
+
+.ins  p {
+    color: #666;
 }
 
 @media (max-width:600px) {
     .header .image img {
-        width: 100px;
+        width: 150px;
     }
 
     .header h2 {
         font-weight: 700;
-        font-size: 1.3rem;
+        font-size: 1.6rem;
         color: #333;
     }
 
+    .content {
+        margin: 1rem;
+    }
 
     .content p {
         font-size: 1.1rem;
 
     }
 
+    #home, #projects {
+        padding: 1rem;
+    }
+
     .project {
         flex-direction: column;
+        margin: 2rem;
     }
+
+    .project-image{
+    background-color: #666;
+    padding: 1rem  1rem 0;
+    border-radius: 0.5rem 0.5rem 0 0;
+    display: flex;
+
+    align-items: center;
+}
+
+.project img {
+    width: 200px;
+
+    margin: 0 auto;
+}
+
 }
