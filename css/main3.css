@@ -1,0 +1,128 @@
+:root {
+    --bg-color: #FAF7F3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Work Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.header h2 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.header .image img {
+    width: 150px;
+}
+
+.nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 3rem;
+    color: #666;
+}
+
+.nav ul li {
+    font-size: 1.2rem;
+}
+
+.nav ul li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #6CB4EE;
+}
+
+.content {
+    width: 100%;
+    color: #333;
+}
+
+.content p {
+    font-size: 1.1rem;
+
+}
+
+.page {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.page ul {
+    margin-left: 1rem;
+}
+
+#project {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.project img {
+    width: 200px;
+}
+
+.project {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.project .info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.project button {
+    padding: 0.5rem 1rem;
+}
+
+@media (max-width:600px) {
+    .header .image img {
+        width: 100px;
+    }
+
+    .header h2 {
+        font-weight: 700;
+        font-size: 1.3rem;
+        color: #333;
+    }
+
+
+    .content p {
+        font-size: 1.1rem;
+
+    }
+
+    .project {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joyeux Anniversaire Victoire</title>
+    <link rel="stylesheet" href="css/main2.css" />
+  </head>
+  <body>
+    <div id="btn2"  style="display: none;flex-direction: column; justify-content: center; align-items: center;">
+        <h1 style="font-size: 1.5rem;">Bonjour bb, ma Victoire</h1>
+        <button onclick="showSurprise()" style="
+          margin-bottom: 30px;
+      padding: 0.8rem 1.5rem;
+      background-color: #ff5eae;
+      border-radius: 20px;
+      font-size: 1.2rem;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.6s ease;
+        ">Continuer</button>
+
+    </div>
+
+    <div id="btn3" style="display: flex;">
+        <div style="padding: 2rem;display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 1rem;">
+<h1 style="font-size: 1.1rem;">C'est quoi le mot secret ?</h1>
+<input
+  type="password"
+  id="password"
+  style="
+    border-radius: 20px;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+  "
+>
+
+        <button onclick="showPage(event)" style="
+          margin-bottom: 30px;
+      padding: 0.8rem 1.5rem;
+      background-color: #ff5eae;
+      border-radius: 20px;
+      font-size: 1.2rem;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.6s ease;
+        
+        ">Valider</button>
+        </div>
+        
+
+    </div>
+    
+    <div id="flower-background" style="display: none;"></div>
+    <div class="container" id="cont" style="display: none; padding: 2rem;">
+      <div class="title">
+        <h1>Joyeux Anniversaire <span class="heart">❤️</span></h1>
+        <h2>À la Reine de mon cœur, et des 21 Juillet</h2>
+        <div class="victoire-animation">
+          <span>V</span><span>i</span><span>c</span><span>t</span><span>o</span
+          ><span>i</span><span>r</span><span>e</span>
+        </div>
+      </div>
+      <div class="img-container">
+        <img src="assets/IMG-20250611-WA0006.jpg" alt="Photo de Victoire" />
+      </div>
+      <div class="message">
+        <p>
+          Mon amour, à travers ce simple site, je veux te rappeler à quel point tu es
+          précieuse à mes yeux.<br />
+          Merci d’illuminer ma vie par ta présence, ta douceur et ton
+          sourire.<br />
+          Je te souhaite tout le bonheur du monde, aujourd’hui et pour
+          toujours.<br /><br />
+        </p>
+      </div>
+      <div class="poeme-avec-le-nom-victoire">
+        <div class="poeme-titre">🌹 Victoire 🌹</div>
+        <div class="vers"><span class="lettre-v">V</span>aillante fille qui boost mes jours,</div>
+        <div class="vers"><span class="lettre-i">I</span>rradie ton éclat, comme une étoile</div>
+        <div class="vers"><span class="lettre-c">C</span>haque pas que tu poses, fort et décidé,</div>
+        <div class="vers"><span class="lettre-t">T</span>race une route noble, vers mon cœur impatient.</div>
+        <div class="vers"><span class="lettre-o">O</span>mbre ou lumière, tu y fais face sans peur,</div>
+        <div class="vers"><span class="lettre-i">I</span>nvincible en silence, avec grâce et ardeur.</div>
+        <div class="vers"><span class="lettre-r">R</span>ayonnante et magnifique guerrière,</div>
+        <div class="vers"><span class="lettre-e">E</span>n toi s’unissent beauté, courage et lumière</div>
+      </div>
+      <div class="by">
+<div style="text-align: center; padding: 2rem;">
+  <button id="btn" onclick="showSurprise2()" style="
+      margin-bottom: 30px;
+      padding: 0.8rem 1.5rem;
+      background-color: #ff5eae;
+      border-radius: 20px;
+      font-size: 1.2rem;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.6s ease;
+    ">
+    💌 Clique ici, mon amour
+  </button>
+
+  <div id="secret-message" class="romantic-message">
+    💖 <h2>Tu es mon éternelle Victoire</h2>
+    <p>Je t'ai fait ce site spécial avec <strong>beaucoup de joie</strong> et <strong>plein d'amour</strong>…</p>
+    <p><span style="font-size: 2rem;">Gros</span> Bisou 😘</p>
+  </div>
+</div>
+
+<style>
+  .romantic-message {
+    display: none;
+    animation: fadeIn 2s ease forwards;
+    background: rgba(255, 192, 203, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    color: #ff69b4;
+    text-shadow: 1px 1px 2px white;
+    font-family: 'Dancing Script', cursive;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Animation de cœur qui tombe */
+  .floating-heart {
+    position: absolute;
+    font-size: 24px;
+    animation: heartFloat 2s ease-out forwards;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  @keyframes heartFloat {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100px) scale(1.5);
+      opacity: 0;
+    }
+  }
+</style>
+
+<script>
+  function showSurprise2() {
+    const btn = document.getElementById("btn");
+    const message = document.getElementById("secret-message");
+
+    btn.style.opacity = 0;
+    setTimeout(() => {
+      btn.style.display = "none";
+      message.style.display = "block";
+    }, 600);
+
+    // Lance une pluie de cœurs
+    for (let i = 0; i < 15; i++) {
+      createFloatingHeart();
+    }
+
+    // Tu peux jouer un son ici si tu veux (romantic.mp3 par exemple)
+    // let audio = new Audio("romantic.mp3");
+    // audio.play();
+  }
+
+  function createFloatingHeart() {
+    const heart = document.createElement("div");
+    heart.className = "floating-heart";
+    heart.textContent = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = 50 + Math.random() * 50 + "vh";
+    heart.style.fontSize = 20 + Math.random() * 20 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 2000);
+  }
+</script>
+
+      </div>
+    </div>
+
+<script>
+  const container = document.getElementById('flower-background');
+  const flowers = ['🥳', '', '🌼', '🌷', '💮', '🌹'];
+
+  function createFlower() {
+    const flower = document.createElement('span');
+    flower.classList.add('flower');
+    flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+    flower.style.left = Math.random() * 100 + 'vw';
+    flower.style.fontSize = 16 + Math.random() * 24 + 'px';
+    flower.style.animationDuration = 4 + Math.random() * 3 + 's';
+    container.appendChild(flower);
+
+    setTimeout(() => {
+      flower.remove();
+    }, 7000);
+  }
+
+  // Créer une fleur toutes les 400ms
+  setInterval(createFlower, 400);
+</script>
+
+<script>
+        function showSurprise() {
+            document.getElementById("btn2").style.display = "none";
+
+            document.getElementById("cont").style.display = "block"
+            document.getElementById("flower-background").style.display = "block"
+            // Tu peux lancer une animation ici aussi
+        }
+        </script>
+
+<script>
+    function showPage(e) {
+        if (e.target.previousElementSibling.value === "bb") {
+            document.getElementById("btn3").style.display = "none"
+             document.getElementById("btn2").style.display = "block";
+        }
+        
+    }
+</script>
+  </body>
+</html>
