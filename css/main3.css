@@ -1,5 +1,5 @@
 :root {
-    --bg-color: #FAF7F3;
+    --bg-color: #F7F7F7;
 }
 
 * {
@@ -12,9 +12,10 @@
 body {
     max-width: 800px;
     margin: 0 auto;
+    background-color: var(--bg-color);
 }
 
-a{
+a {
     color: #0070FF;
 }
 
@@ -52,6 +53,15 @@ a{
     width: 150px;
 }
 
+.header .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+
 .nav ul {
     display: flex;
     list-style-type: none;
@@ -82,6 +92,20 @@ a{
 
 }
 
+#home {
+    background-color: #F0F8FF;
+    padding: 2rem;
+}
+
+#home a{
+    text-decoration: none;
+}
+
+#home a:hover {
+    text-decoration: underline;
+}
+
+
 .page {
     display: flex;
     justify-content: start;
@@ -91,32 +115,70 @@ a{
 
 .page ul {
     list-style-type: none;
+    display: flex;
+    gap: 1rem;
 }
 
-.page ul svg {
-    width: 25px;
+.page ul li {
+    width: 100px;
+    padding: 0.5rem 1rem;
 }
 
-.page ul li a{
-    margin-bottom: 0.5rem;
-    text-decoration: none;
-    font-size: 1.1rem;
+.page ul .github {
+    background-color: #666 ;
+    color: white ;
+}
+.page ul .github a {
+    color: white ;
+}
+
+.page ul .email {
+    background-color: #FE6F5E ;
+    color: white ;
+}
+.page ul .email a {
+    color: white ;
+}
+
+.page ul .discord {
+    background-color: #6082B6 ;
+    color: white ;
+}
+.page ul .discord a {
+    color: white ;
+}
+
+.page ul .reddit {
+    background-color: #FE0000 ;
+    color: white ;
+}
+.page ul .reddit a {
+    color: white ;
+}
+
+.page ul li svg {
+    width: 40px;
 }
 
 .page ul li a {
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    font-size: 1.1rem;
     gap: 0.5rem;
     display: flex;
     align-items: center;
+    text-decoration: none !important;
 }
+
 
 #project {
     display: flex;
     flex-direction: column;
 }
 
-.project-image{
+.project-image {
     background-color: #666;
-    padding: 1.5rem  1.5rem 0;
+    padding: 1.5rem 1.5rem 0;
     border-radius: 0.5rem 0.5rem 0 0;
 
     display: flex;
@@ -133,17 +195,21 @@ a{
     display: flex;
     gap: 2rem;
     margin-bottom: 1.5rem;
+    background-color: #F0F8FF;
+    padding: 2rem;
+    border-radius: 0.5rem;
 }
 
 .project .info {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
 }
 
 .project button {
     padding: 0.5rem 1rem;
-    background-color: #0070FF;
+    background-color: #1E90FF;
     border: none;
     border-radius: 20px;
     font-size: 1rem;
@@ -170,7 +236,7 @@ a{
     padding: 1rem;
 }
 
-.ins  p {
+.ins p {
     color: #666;
 }
 
@@ -194,8 +260,21 @@ a{
 
     }
 
-    #home, #projects {
+    #home,
+    #projects {
         padding: 1rem;
+    }
+
+    .page ul {
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .page ul li {
+        background-color: #6CB4EE;
+        width: 100px;
+        padding: 0.2rem 0.8rem;
     }
 
     .project {
@@ -203,19 +282,20 @@ a{
         margin: 2rem;
     }
 
-    .project-image{
-    background-color: #666;
-    padding: 1rem  1rem 0;
-    border-radius: 0.5rem 0.5rem 0 0;
-    display: flex;
 
-    align-items: center;
-}
+    .project-image {
+        background-color: #666;
+        padding: 1rem 1rem 0;
+        border-radius: 0.5rem 0.5rem 0 0;
+        display: flex;
 
-.project img {
-    width: 200px;
+        align-items: center;
+    }
 
-    margin: 0 auto;
-}
+    .project img {
+        width: 200px;
+
+        margin: 0 auto;
+    }
 
 }
