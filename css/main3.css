@@ -1,5 +1,5 @@
 :root {
-    --bg-color: #F7F7F7;
+    --bg-color:white;
 }
 
 * {
@@ -187,7 +187,7 @@ a {
 }
 
 .project img {
-    width: 300px;
+    max-width: 300px;
 
 }
 
@@ -241,9 +241,6 @@ a {
 }
 
 @media (max-width:600px) {
-    .header .image img {
-        width: 150px;
-    }
 
     .header h2 {
         font-weight: 700;
@@ -268,7 +265,7 @@ a {
     .page ul {
         list-style-type: none;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .page ul li {
@@ -279,23 +276,26 @@ a {
 
     .project {
         flex-direction: column;
-        margin: 2rem;
+        margin: 1rem;
     }
 
 
     .project-image {
         background-color: #666;
-        padding: 1rem 1rem 0;
-        border-radius: 0.5rem 0.5rem 0 0;
+        padding: 0.5rem 0.5rem 0;
+        border-radius: 0.3rem 0.3rem 0 0;
         display: flex;
-
         align-items: center;
     }
 
     .project img {
-        width: 200px;
-
+     min-width: 150px;
         margin: 0 auto;
     }
 
+}
+
+
+@media (max-width:360px) {
+    
 }
