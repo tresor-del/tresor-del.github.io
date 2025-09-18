@@ -1,0 +1,517 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 850px;
+    margin: 0 auto;
+    background-color: #353839;
+}
+
+a {
+    color: #0070FF;
+}
+
+.active {
+    color: #6CB4EE;
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    margin: 3rem;
+}
+
+.header h2 {
+    font-weight: 300;
+    font-size: 2.5rem;
+    color: white;
+    font-family: "Saira", sans-serif;
+
+}
+
+.header .image img {
+    width: 200px;
+}
+
+.header .info {
+    display: flex;
+    /* flex-direction: column;   */
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 5rem;
+}
+
+.header .info .name {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.job,
+.location {
+    display: flex;
+    gap: 1rem;
+    color: white;
+    font-weight: 300;
+    opacity: 0.7;
+    font-size: 1.1rem;
+}
+
+.nav {
+    width: 100%;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    gap: 3rem;
+    color: white;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.nav ul li {
+    font-size: 1.5rem;
+}
+
+.nav ul li:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: blue;
+}
+
+.content {
+    width: 100%;
+    color: white;
+    line-height: 1.5;
+    margin-bottom: 4rem;
+    width: 90%;
+    margin-top: 1rem;
+}
+
+.content p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+}
+
+#home .main {
+    display: flex;
+    gap: 5rem;
+
+    margin-bottom: 10rem;
+}
+
+#home .main p {
+    font-size: 1.7rem;
+}
+
+#home .main p .name {
+    font-family: "Saira", sans-serif !important;
+}
+
+.cv {
+    font-size: 1.2rem !important;
+    opacity: 0.7;
+}
+
+#home .main img {
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#home h2 {
+    font-weight: 100;
+    font-size: 3.5rem;
+}
+
+#home p .name {
+    color: #1E90FF;
+}
+
+#home {
+    /* background-color: #F0F8FF; */
+    padding: 2rem;
+}
+
+#home a {
+    text-decoration: none;
+}
+
+#home a:hover {
+    text-decoration: underline;
+}
+
+
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.links {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.links li {
+    /* width: 100px; */
+    padding: 0.5rem 1rem;
+}
+
+.links li a {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.links li a div {
+    margin-right: 1rem;
+}
+
+ul .github {
+    background-color: #666;
+    color: white;
+}
+
+ul .github a {
+    color: white;
+}
+
+ul .email {
+    background-color: #FE6F5E;
+    color: white;
+}
+
+ul .email a {
+    color: white;
+}
+
+ul .discord {
+    background-color: #6082B6;
+    color: white;
+}
+
+ul .discord a {
+    color: white;
+}
+
+ul .reddit {
+    background-color: #FE0000;
+    color: white;
+}
+
+ul .reddit a {
+    color: white;
+}
+
+ul li svg {
+    width: 40px;
+}
+
+.page ul li a {
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+    gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none !important;
+}
+
+
+.project-image {
+    background-color: #666;
+    padding: 1.5rem 1.5rem 0;
+    border-radius: 0.5rem 0.5rem 0 0;
+
+    display: flex;
+
+    align-items: center;
+}
+
+.project img {
+    max-width: 300px;
+
+}
+
+.project {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    background-color: #333;
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+.project .info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+
+.project-info-links svg {
+    width: 20px;
+}
+
+.project-info-links button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.p {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.ins {
+    padding: 1rem;
+}
+
+.ins p {
+    color: #666;
+}
+
+/* contact  */
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+label {
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 300;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+.btn-submit, .project button {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-submit::before , .project button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-submit:hover, .project button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ff5252, #d84315);
+}
+
+.btn-submit:hover::before .project button:hover::before{
+    left: 100%;
+}
+
+.btn-submit:active, .project button:active{
+    transform: translateY(-1px);
+}
+
+.error {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: none;
+}
+
+.form-group.invalid input {
+    border-color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.1);
+}
+
+.form-group.invalid .error {
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        padding: 30px 20px;
+        margin: 10px;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Animation pour les champs */
+.form-group {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.form-group:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.form-group:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.form-group:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.btn-submit {
+    animation: fadeInUp 0.6s ease-out 0.4s forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width:600px) {
+
+    .header h2 {
+        font-weight: 700;
+        font-size: 1.6rem;
+        color: white;
+    }
+
+    .header .info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav ul li {
+        font-size: 1.1rem;
+    }
+
+    .content {
+        margin: 1rem;
+    }
+
+    .content p {
+        font-size: 1.1rem;
+
+    }
+
+    #home,
+    #projects {
+        padding: 1rem;
+    }
+
+    #home .main {
+        flex-direction: column;
+    }
+
+    #home .main-mobile {
+        flex-direction: column-reverse !important;
+    }
+
+
+    .project {
+        flex-direction: column;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+
+    .project-image {
+        background-color: #666;
+        padding: 0.5rem 0.5rem 0;
+        border-radius: 0.3rem 0.3rem 0 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .project img {
+        min-width: 150px;
+        margin: 0 auto;
+    }
+
+}
+
+
+@media (max-width:360px) {}
