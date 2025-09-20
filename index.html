@@ -23,7 +23,7 @@
 
     <div class="hero">
       <div class="hero-content">
-        <h1>Welcome on my website</h1>
+        <!-- <h1>Welcome on my website</h1> -->
       </div>
     </div>
 
@@ -68,19 +68,31 @@
         </div>
       </div>
       <div class="nav">
-        <ul>
-          <li><a class="active" href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contacts">Contacts</a></li>
-        </ul>
-        <div id="progress-bar" style="display: none;"></div>
+  <div class="nav-container">
+    <button class="hamburger">&#9776;</button> 
+    <ul>
+      <li><a class="active" href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contacts">Contacts</a></li>
+    </ul>
+  </div>
+</div>
 
-      </div>
+<script>
+  const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav ul ');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+</script>
+
       <div class="content">
         <div class="page" id="home">
           <div class="ref" id="about"></div>
-          <div class="main">
+          <div class="main" id="about">
             <div class="slide-left">
               <h2>Hello,</h2>
               <br />
@@ -99,6 +111,7 @@
               />
             </div>
           </div>
+
           <div class="ref" id="skills"></div>
           <div class="main main-mobile" id="skills">
             <div class="slide-left">
@@ -121,15 +134,18 @@
 
           <div class="ref" id="projects">
           </div>
-          <div class="page" id="projects">
-            <div class="project main">
+          <div class="page" >
+            <div class="mai">
+                  <h2>Projects</h2>
+            </div>
+            <div class="project main  main-mobile" id="projects">
               <div class="project-image slide-left">
                 <img src="assets/dashboard.png" alt="QuadraFlow  image" />
               </div>
 
               <div class="info slide-right">
                 <div class="project-info-title">
-                  <h2>QuadraFlow</h2>
+                  <h3>QuadraFlow</h3>
                 </div>
                 <div class="project-info-description">
                   <p>Task manager using four quadra.</p>
@@ -199,11 +215,11 @@
             </div>
           </div> -->
 
-            <div class="project main">
+            <div class="project main " id="projects">
               
               <div class="info slide-left">
                 <div class="project-info-title">
-                  <h2>UrlShortener</h2>
+                  <h3>UrlShortener</h3>
                 </div>
                 <div class="project-info-description">
                   <p>Simple Url Shortener project</p>
@@ -355,7 +371,7 @@
           </div>
 
           <div class="ref" id="contacts"></div>
-          <div class="main" id="contacts">
+          <div class="main " id="contacts">
             <div class="slide-left">
               <h2 id="contact">Contacts</h2>
               <br />
