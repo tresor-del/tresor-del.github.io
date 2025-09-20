@@ -9,10 +9,14 @@
     box-sizing: border-box;
 }
 
+html {
+
+    scroll-behavior: smooth;
+}
+
 body {
-    max-width: 850px;
-    margin: 0 auto;
-    background-color: #111111;
+
+    background-color: #1B1B1B;
 }
 
 a {
@@ -24,7 +28,39 @@ a {
     text-decoration: underline;
 }
 
+.hero {
+    width: 100%;
+    height: 300px;
+    background-image: url("../assets/composition-abstraite-de-lumiere-ultraviolette-uv.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+
+    box-shadow: inset 0 -50px 30px #1B1B1B;
+
+    /* filter: blur(3px); */
+}
+
+.hero-content {
+    padding: 20px;
+    border-radius: 10px;
+    transform: scaleY(1.5);
+    display: inline-block;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+}
+
+
 .container {
+    max-width: 850px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,14 +68,17 @@ a {
 }
 
 .header {
-    margin: 3rem;
+    /* margin: 3rem; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 300px);
 }
 
 .header h2 {
     font-weight: 300;
     font-size: 2.5rem;
     color: white;
-    font-family: "Saira", sans-serif;
 
 }
 
@@ -53,7 +92,6 @@ a {
     align-items: center;
     justify-content: space-evenly;
     gap: 5rem;
-    margin-bottom: 5rem;
 }
 
 .header .info .name {
@@ -78,7 +116,15 @@ a {
     top: 0;
     z-index: 100;
     transition: all 0.3s ease;
+    padding: 0.7rem 1.3rem;
 }
+
+.nav a {
+    text-decoration: none;
+    color: #808080;
+    transition: color 0.3s;
+}
+
 
 .nav ul {
     display: flex;
@@ -88,36 +134,34 @@ a {
     color: white;
 }
 
+#progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    background: #1E90FF;
+    width: 0%;
+    z-index: 9999;
+}
+
+#progress-bar-mobile {
+    display: none;
+}
+
 /* effet collant du nav-bar */
 
 .nav.sticky {
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    /* left: 50%;    */
+    /* transform: translateX(-50%); */
     box-shadow: 0 2px 10px var(--shadow);
     max-width: 850px;
     width: calc(100% - 40px);
-    padding: 0.5rem 1rem;
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
 }
 
-.nav.sticky ul {
-    animation: slideDown 0.3s ease-out
-}
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 .nav ul li {
     font-size: 1.5rem;
@@ -127,14 +171,12 @@ a {
 .nav ul li:hover {
     text-decoration: none !important;
     cursor: pointer;
-    color: blue;
 }
 
 .content {
     width: 100%;
     color: white;
     line-height: 1.5;
-    margin-bottom: 4rem;
     width: 90%;
     margin-top: 1rem;
 }
@@ -147,7 +189,6 @@ a {
 #home {
     display: flex;
     flex-direction: column;
-    margin-top: 5rem;
 }
 
 #home .main {
@@ -189,22 +230,33 @@ a {
     transform: translateX(0);
 }
 
-#home .main p {
+
+.main p {
     font-size: 1.7rem;
 }
 
-#home .main p .name {
+.main p .name {
     font-family: "Saira", sans-serif !important;
 }
+
+
+
+
 
 .cv {
     font-size: 1.2rem !important;
     opacity: 0.7;
 }
 
-#home .main img {
+.main img {
     object-fit: cover;
     border-radius: 10px;
+}
+
+
+
+.ref {
+    margin-bottom: 10rem;
 }
 
 #home h2 {
@@ -239,10 +291,10 @@ a {
 .social {
     display: flex;
     flex-direction: column;
-    gap: 2rem  
+    gap: 2rem
 }
 
-.social div a{
+.social div a {
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -263,12 +315,17 @@ a {
 
 
 .social div:hover {
-  animation: gradientMove 0.5s forwards;
+    animation: gradientMove 0.5s forwards;
 }
 
 @keyframes gradientMove {
-  from { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); }
-  to { background: linear-gradient(135deg, blue, #ff6b6b); }
+    from {
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    }
+
+    to {
+        background: linear-gradient(135deg, blue, #ff6b6b);
+    }
 }
 
 .social svg {
@@ -291,28 +348,17 @@ a {
 }
 
 
-.project-image {
-    background-color: #666;
-    padding: 1.5rem 1.5rem 0;
-    border-radius: 0.5rem 0.5rem 0 0;
-    display: flex;
-    align-items: center;
-}
-
 .project img {
     max-width: 300px;
-
+    height: 300px;
 }
 
-#projects {
-    margin-top: 5rem !important;
-}
+
 
 .project {
     display: flex;
     gap: 2rem;
     margin-bottom: 1.5rem;
-    background: linear-gradient(90deg,rgba(255, 255, 255, 0.2),transparent, rgba(255, 255, 255, 0.2));
     padding: 2rem;
     border-radius: 0.5rem;
 }
@@ -513,6 +559,20 @@ a {
     .project img {
         min-width: 150px;
         margin: 0 auto;
+    }
+
+    #progress-bar-mobile {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 5px;
+        background: #1E90FF;
+        width: 0%;
+        z-index: 9999;
+    }
+
+    #progress-bar {
+        display: none !important;
     }
 
 }
