@@ -69,11 +69,44 @@ section.w-page .about .text h1 {
     font-family: "Bungee", sans-serif;
 }
 
+section.w-page .about .text h1 .l{
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease; 
+    display: inline-block; 
+}
+
+section.w-page .about .text h1 .l:hover, section.w-page .about .text h1 .l.auto-hover{
+    color: var(--nav-text-color);
+    text-shadow: 
+        0 0 10px var(--nav-tex-color-active),
+        0 0 20px var(--nav-tex-color-active),
+        0 0 30px var(--nav-tex-color-active);
+    transform: translateY(-5px) scale(1.1);
+}
+
 section.w-page .about .text h2 {
     font-family: "Dancing Script", cursive;
     color: var(--nav-text-color);
     font-size: 4rem;
     margin-left: 8rem;
+
+}
+
+section.w-page .about .text.show h2 {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+}
+
+section.w-page .about .text.show h2.typing{
+    animation: typing 2s steps(15) forwards;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
 }
 
 section.w-page .about .text h1 span {
@@ -189,6 +222,17 @@ section.w-page .about .text div svg {
 
 .text-slide-left.show {
     transform: translateX(0);
+    opacity: 1;
+}
+
+.text-slide-bottom {
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+
+.text-slide-bottom.show {
+    transform: translateY(0);
     opacity: 1;
 }
 
