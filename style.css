@@ -6,8 +6,8 @@
 
 :root {
     ---bg-color: black;
-    --nav-text-color: #7BA05B;
-    --nav-tex-color-active: #8DB600;
+    --nav-text-color: #d69824;
+    --nav-tex-color-active: #FFD700;
     --text-color: #E5E4E2;
 }
 
@@ -41,8 +41,9 @@ h3 {
     margin: 0;
 }
 
+/* Section */
 
-section#about .about {
+section.w-page .about {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -50,7 +51,7 @@ section#about .about {
     position: relative;
 }
 
-section#about .about .text {
+section.w-page .about .text {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,19 +64,19 @@ section#about .about .text {
     height: 100vh;
 }
 
-section#about .about .text h1 {
+section.w-page .about .text h1 {
     font-size: 8rem;
     font-family: "Bungee", sans-serif;
 }
 
-section#about .about .text h2 {
+section.w-page .about .text h2 {
     font-family: "Dancing Script", cursive;
     color: var(--nav-text-color);
     font-size: 4rem;
     margin-left: 8rem;
 }
 
-section#about .about .text h1 span{
+section.w-page .about .text h1 span {
     margin-left: 8rem;
 }
 
@@ -113,7 +114,7 @@ section#about .about .text h1 span{
     z-index: 1;
 }
 
-section#about .about .text div {
+section.w-page .about .text div {
     display: flex;
     gap: 2rem;
     align-items: center;
@@ -121,21 +122,130 @@ section#about .about .text div {
     margin-top: 2rem;
 }
 
-section#about .about .text div svg {
+section.w-page .about .text div svg {
     width: 50px;
     margin: 0;
     padding: 0;
 }
 
+/* page de bienvenue */
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out;
+    padding: 1rem; 
+}
+
+.welcome-text {
+    font-size: clamp(2rem, 8vw, 3rem); 
+    text-align: center;
+    animation: fadeInUp 1s ease-out;
+    max-width: 90%; 
+    word-wrap: break-word; 
+}
+
+#loader.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#main-content {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+#main-content.show {
+    opacity: 1;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/*  animation de slide */
+
+.text-slide-left {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+
+.text-slide-left.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.img-slide-right {
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 1s ease-out 0.3s;
+}
+
+.img-slide-right.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* navigation */
+
+.navigation-icons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.nav-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--nav-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    color: black;
+}
+
+
+.nav-icon:hover {
+    background: var(--nav-tex-color-active);
+    transform: scale(1.1);
+}
+
+.nav-icon svg {
+    width: 40px;
+    height: 40px;
+}
+
 @media (max-width: 768px) {
 
-    section#about .about {
+    section.w-page .about {
         flex-direction: column;
         height: auto;
         padding: 2rem 1rem;
     }
 
-    section#about .about .text {
+    section.w-page .about .text {
         position: static;
         height: auto;
         gap: 1.5rem;
@@ -143,17 +253,17 @@ section#about .about .text div svg {
         align-items: center;
     }
 
-    section#about .about .text h1 {
+    section.w-page .about .text h1 {
         font-size: 3rem;
         text-align: left;
     }
 
-    section#about .about .text h1 span{
-    margin-left: 4rem;
-}
+    section.w-page .about .text h1 span {
+        margin-left: 4rem;
+    }
 
 
-    section#about .about .text h2 {
+    section.w-page .about .text h2 {
         font-size: 2rem;
         margin-left: 0;
         text-align: left;
@@ -166,12 +276,27 @@ section#about .about .text div svg {
         display: block;
     }
 
-    section#about .about .text div {
+    section.w-page .about .text div {
         gap: 1rem;
         margin-top: 1rem;
     }
 
-    section#about .about .text div svg {
+    section.w-page .about .text div svg {
         width: 32px;
+    }
+
+    .nav-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .nav-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+     .welcome-text {
+        font-size: 2.5rem;
+        padding: 0 1rem;
     }
 }
