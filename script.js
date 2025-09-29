@@ -50,6 +50,8 @@ function hideLoader() {
   const textElement = document.querySelector(".text-slide-left");
   const imgElement = document.querySelector(".img-slide-right");
   const navElement = document.querySelector(".text-slide-top");
+  const socialElement = document.querySelector(".text-slide-bottom");
+  const nameElmt = document.querySelector(".name")
 
   loader.classList.add("hide");
 
@@ -65,6 +67,8 @@ function hideLoader() {
         
     //   });
       navElement.classList.add("show");
+      socialElement.classList.add("show");
+      nameElmt.classList.add("show")
     }, 1500);
 
     // Typing après 1.5s
