@@ -47,7 +47,7 @@ h3 {
 
 section {
     min-height: 100vh;
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; */
 }
 
 section .s-n {
@@ -64,7 +64,6 @@ section.w-page .about {
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-top: 2rem;
     width: 100%;
 }
 
@@ -251,10 +250,17 @@ section h1 {
 
     /* Projets */
 
+    #projects {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
     .projects-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
+        margin-bottom: 5rem;
     }
 
     .projects-container .card {
@@ -287,9 +293,10 @@ section h1 {
     }
 
     .card .footer .lang div {
-        background-color: rgb(0, 0, 255, 0.2);
+        background-color: rgba(102, 102, 145, 0.2);
         padding: 3px 4px;
         border-radius: 10px;
+        color: rgb(240, 240, 240);
         font-size: 0.8rem;
         opacity: 0.7;
     }
@@ -299,6 +306,13 @@ section h1 {
         justify-content: space-between;
     }
 
+    .more {
+        border: 1px solid #666;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        font-size: 1.6rem;
+    }
 /* page de bienvenue */
 
 #loader {
@@ -453,9 +467,11 @@ section h1 {
 
     section.w-page .about {
         flex-direction: column-reverse;
+        justify-content: unset;
+        align-items: center;
         height: auto;
         padding: 2rem 1rem;
-        margin-top: 5rem;
+        margin-top: 3rem;
     }
 
     section.w-page .about .text {
@@ -611,5 +627,24 @@ section h1 {
 
     #loader {
         padding: 0 !important;
+    }
+
+        /* Projets */
+
+    .projects-container {
+        grid-template-columns: repeat(1, 1fr);
+        margin-bottom: 3rem;
+    }
+
+    .projects-container .card {
+        width: 350px;
+        margin: 0 auto;
+    }
+
+}
+
+@media (max-width: 1008px) {
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
