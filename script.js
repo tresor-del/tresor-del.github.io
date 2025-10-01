@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+
   window.addEventListener("load", () => {
     setTimeout(hideLoader, 500);
   });
@@ -9,40 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
   hamburger.addEventListener("click", () => {
     navLinks.classList.toggle("active");
   });
+
+  Navigation();
+
 });
 
-// function autoHoverEffect() {
-//     const letters = document.querySelectorAll('.l');
-//     let currentIndex = 0;
-
-//     function animateNextLetter() {
-//         // Retirer l'effet de la lettre précédente
-//         if (currentIndex > 0) {
-//             letters[currentIndex - 1].classList.remove('auto-hover');
-//         }
-
-//         // Ajouter l'effet à la lettre courante
-//         if (letters[currentIndex]) {
-//             letters[currentIndex].classList.add('auto-hover');
-//         }
-
-//         // Passer à la lettre suivante
-//         currentIndex++;
-
-//         // Arrêter quand toutes les lettres ont été animées
-//         if (currentIndex < letters.length) {
-//             setTimeout(animateNextLetter, 150);
-//         } else {
-//             // Retirer l'effet de la dernière lettre après 3 secondes
-//             setTimeout(() => {
-//                 letters[letters.length - 1].classList.remove('auto-hover');
-//             }, 100);
-//         }
-//     }
-
-//     // Commencer l'animation
-//     animateNextLetter();
-// }
 
 function hideLoader() {
   const loader = document.getElementById("loader");
@@ -86,4 +58,30 @@ function hideLoader() {
       loader.style.display = "none";
     }, 3000);
   }, 250);
+}
+
+function Navigation() {
+  
+  const btns = document.querySelectorAll("ul [data-target]")
+
+  btns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      
+      const sectionId = btn.dataset.target;
+
+      const section = document.getElementById(sectionId)
+
+      btns.forEach(btn => btn.classList.remove("active"))
+      btn.classList.add("active")
+
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth"});
+      }
+
+    })
+  })
+
+
+
+
 }
