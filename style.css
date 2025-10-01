@@ -6,7 +6,7 @@
 
 :root {
     ---bg-color: black;
-    --nav-text-color: orange;
+    --nav-text-color: rgb(255, 115, 0, 0.9);
     --nav-tex-color-active: #FFD700;
     --text-color: #E5E4E2;
 }
@@ -30,7 +30,6 @@ body {
 }
 
 
-
 a {
     text-decoration: none;
     font-size: 1.5rem;
@@ -51,7 +50,6 @@ section {
 }
 
 section .s-n {
-    padding-top: 5rem;
     text-align: center;
     font-size: 4rem;
     font-family: "Dancing Script", cursive;
@@ -196,28 +194,27 @@ section.w-page .about .text div svg {
     flex-direction: column;
 }
 
-section h1 {
-    margin-top: rem;
-}
 
 .s {
     display: flex;
     justify-content: space-around;
 }
 
-.s-card .skills-badges div,
-.s-card .devops-deployment div,
-.s-card .db div {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
+section .sub {
+    opacity: 0.5;
+    margin: 0.5rem;
+    text-align: center;
 }
 
-.s-card .skills-badges div img,
-.s-card .devops-deployment div img,
-.s-card .db div img {
-    width: 110px;
-    height: 30px;
+.s-card .card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.s-card .card img {
+    width: 150px;
+    height: 40px;
 
 }
 
@@ -259,7 +256,9 @@ section h1 {
     .projects-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+    /* gap: 2rem; */
+        row-gap: 2rem;
+    
         margin-bottom: 5rem;
     }
 
@@ -451,8 +450,8 @@ section h1 {
     font-weight: 700;
 }
 
-.logo {
-    font-weight: 700;
+.logo img{
+    height: 30px;
 }
 
 /* hamburger caché sur desktop */
@@ -471,7 +470,6 @@ section h1 {
         align-items: center;
         height: auto;
         padding: 2rem 1rem;
-        margin-top: 3rem;
     }
 
     section.w-page .about .text {
@@ -488,9 +486,7 @@ section h1 {
         font-family: inherit;
     }
 
-    section.w-page .about .text h1 span {
-        margin-left: 2px;
-    }
+
 
 
     section.w-page .about .text h2 {
@@ -546,17 +542,13 @@ section h1 {
         gap: 2rem;
     }
 
-    .s-card .skills-badges div,
-    .s-card .devops-deployment div,
-    .s-card .db div {
+    .s-card .card {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 0.5rem;
     }
 
-    .s-card .skills-badges div img,
-    .s-card .devops-deployment div img,
-    .s-card .db div img {
+    .s-card .card img {
         width: 100px;
         height: 30px;
 
@@ -567,7 +559,9 @@ section h1 {
 
     }
 
-
+    .logo img {
+        height: 20px;
+    }
 
     .nav-icon {
         width: 50px;
@@ -632,7 +626,7 @@ section h1 {
         /* Projets */
 
     .projects-container {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 1fr) !important;
         margin-bottom: 3rem;
     }
 

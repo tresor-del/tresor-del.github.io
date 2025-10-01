@@ -26,7 +26,7 @@ function hideLoader() {
   const nameElmt = document.querySelector(".name")
 
   loader.classList.add("hide");
-
+  
   setTimeout(() => {
     mainContent.classList.add("show");
     imgElement.classList.add("show");
@@ -57,7 +57,7 @@ function hideLoader() {
     setTimeout(() => {
       loader.style.display = "none";
     }, 3000);
-  }, 250);
+  }, 200);
 }
 
 function Navigation() {
