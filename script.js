@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Navigation();
 
+  sendMessage();
+
 });
 
 
@@ -80,8 +82,10 @@ function Navigation() {
 
     })
   })
+}
 
-
-
-
+function sendMessage() {
+  document.querySelector(".submit-btn").addEventListener("click", function() {
+    alert("Can't receive message for the moment, please use my social links (;")
+  })
 }
