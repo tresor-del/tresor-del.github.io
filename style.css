@@ -888,7 +888,7 @@ footer h3 {
     /* Projets */
 
     #projects {
-        min-height: 140vh !important;
+        min-height: 200vh !important;
     }
 
     .projects-container {
@@ -908,7 +908,7 @@ footer h3 {
     }
 
     .contacts {
-        min-height: 110vh ;
+        min-height: 130vh ;
     }
 
     @keyframes fadeInUp {
