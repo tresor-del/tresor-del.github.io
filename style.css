@@ -141,6 +141,20 @@ section.w-page .about .text h1 .f-n {
     font-weight: lighter;
 }
 
+section.w-page .about .connect {
+    border: 2px solid var(--nav-text-color);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    background-color: #222;
+    cursor: pointer;
+
+}
+
+section.w-page .about .connect:hover {
+    background-color: var(--nav-text-color);
+    color: white;
+}
+
 section.w-page {
     position: relative;
     margin-top: 3rem;
@@ -157,7 +171,7 @@ section.w-page::after {
     clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0% 100%);
     transform-origin: left bottom;
     pointer-events: none;
-    margin-top: 1rem;
+    margin-top: 4rem !important;
 }
 
 
@@ -229,7 +243,7 @@ section.w-page .about .text div svg {
     right: 0;
     height: 100px;
     bottom: -1px;
-    background-color: #363434;
+    background-color: #222;
     clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0% 100%);
     transform-origin: left bottom;
     pointer-events: none;
@@ -292,7 +306,7 @@ section .sub {
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    background-color: #363434;
+    background-color: #222;
     position: relative;
 }
 
@@ -320,7 +334,7 @@ section .sub {
 }
 
 .projects-container .card {
-    width: clamp(300px, 3vw, 380px);
+    max-width: 380px;
     margin: 0 auto;
     background-color: rgba(83, 66, 128, 0.4);
     padding: 1rem;
@@ -728,7 +742,7 @@ footer h3 {
     }
 
     section.w-page {
-        min-height: 90vh !important;
+        min-height: 110vh !important;
     }
 
     section.w-page .about {
@@ -761,6 +775,15 @@ footer h3 {
         text-align: left;
     }
 
+    section.w-page .about .connect {
+        padding: 0.5rem 1rem;
+
+    }
+
+     section.w-page .about .connect a {
+        font-size: 1.1rem ;
+     }
+
     .img {
         width: 180px;
         right: 0;
@@ -788,7 +811,7 @@ footer h3 {
 
     #skills {
         padding: 0 1.5rem;
-
+        min-height: 120vh;
     }
 
     .s-card div h3 {
@@ -908,7 +931,7 @@ footer h3 {
     }
 
     .contacts {
-        min-height: 130vh ;
+        min-height: 150vh;
     }
 
     @keyframes fadeInUp {

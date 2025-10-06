@@ -111,7 +111,7 @@ function Obs() {
       }
 
     })
-  }, {threshold: 0.3})
+  }, {threshold: 0.7})
 
   sections.forEach(section => observer.observe(section));
 }
