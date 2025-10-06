@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
     navLinks.classList.toggle("active");
   });
 
+  Obs()
+
   Navigation();
 
   sendMessage();
@@ -88,4 +90,28 @@ function sendMessage() {
   document.querySelector(".submit-btn").addEventListener("click", function() {
     alert("Can't receive message for the moment, please use my social links (;")
   })
+}
+
+function Obs() {
+    const sections = document.querySelectorAll("[data-section]");
+    const btns = document.querySelectorAll("ul [data-target]")
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+
+      if(entry.isIntersecting) {
+        btns.forEach(btn => btn.classList.remove("active"))
+
+         const targetClass = entry.target.dataset.section; // ou entry.target.classList[0]
+      const activeBtn = document.querySelector(`ul [data-target="${targetClass}"]`);
+      
+      if (activeBtn) {
+        activeBtn.classList.add("active");
+      }
+      }
+
+    })
+  }, {threshold: 0.3})
+
+  sections.forEach(section => observer.observe(section));
 }

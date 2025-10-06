@@ -47,6 +47,7 @@ h3 {
 section {
     min-height: 100vh;
     /* scroll-snap-align: start; */
+    padding-top: 4rem;
 }
 
 section .s-n,
@@ -142,7 +143,7 @@ section.w-page .about .text h1 .f-n {
 
 section.w-page {
     position: relative;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 section.w-page::after {
@@ -189,7 +190,7 @@ section.w-page::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -319,7 +320,7 @@ section .sub {
 }
 
 .projects-container .card {
-    width: 380px;
+    width: clamp(300px, 3vw, 380px);
     margin: 0 auto;
     background-color: rgba(83, 66, 128, 0.4);
     padding: 1rem;
@@ -370,14 +371,28 @@ section .sub {
 }
 
 /* contacts */
+
 .contacts {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4rem;
-    min-height: 50vh;
+    min-height: 100vh;
     width: 100%;
-    margin-bottom: 3rem;
+    position: relative;
+}
+
+.contacts::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50px;
+    bottom: -1px;
+    background: linear-gradient(90deg, #eb9028, #494342);
+    clip-path: polygon(0 90%, 100% 0%, 100% 100%, 0% 100%);
+    transform-origin: left bottom;
+    pointer-events: none;
 }
 
 .c {
@@ -448,10 +463,17 @@ section .sub {
 
 /* footer */
 
-.footer h3 {
+footer {
+    background: linear-gradient(90deg, #eb9028, #494342);
+    margin: 0;
+    padding: 0;
+}
+
+footer h3 {
     text-align: center;
     padding: 2rem;
     opacity: 0.8;
+
 }
 
 @media (max-width: 768px) {
@@ -689,17 +711,29 @@ section .sub {
     cursor: pointer;
 }
 
+@media (max-width: 780px) {
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .s-card .card img {
+        width: 110px;
+    }
+}
 
 @media (max-width: 768px) {
 
+    section {
+        padding-top: 0 !important;
+    }
+
     section.w-page {
-        min-height: 110vh !important;
+        min-height: 90vh !important;
     }
 
     section.w-page .about {
         flex-direction: column-reverse;
         justify-content: unset;
-        align-items: center;
         height: auto;
         padding: 2rem 1rem;
     }
@@ -850,15 +884,11 @@ section .sub {
         margin-left: 1rem !important;
     }
 
-    /* skills */
-    #skills {
-        min-height: 120vh !important;
-    }
 
     /* Projets */
 
     #projects {
-        min-height: 200vh !important;
+        min-height: 140vh !important;
     }
 
     .projects-container {
@@ -877,6 +907,10 @@ section .sub {
         margin-left: 5rem;
     }
 
+    .contacts {
+        min-height: 110vh ;
+    }
+
     @keyframes fadeInUp {
         from {
             opacity: 0;
@@ -891,8 +925,32 @@ section .sub {
 
 }
 
-@media (max-width: 1008px) {
+@media (max-width: 1000px) {
     .projects-container {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .s-card .card img {
+        width: 120px;
+        height: 35px;
+
+    }
+
+    .m-l {
+        width: 400px;
+    }
+}
+
+@media (max-width: 1030px) {
+
+    .s-card .card img {
+        width: 120px;
+        height: 35px;
+
+    }
+
+    .m-l {
+        width: 400px !important;
+    }
+
 }
